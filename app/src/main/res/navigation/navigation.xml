@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFrag">
+
+    <fragment
+        android:id="@+id/homeFrag"
+        android:name="android.vergara.tafoda.frags.HomeFrag"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/listaFrag"
+        android:name="android.vergara.tafoda.frags.ListaFrag"
+        android:label="fragment_lista"
+        tools:layout="@layout/fragment_lista" />
+    <fragment
+        android:id="@+id/detailFrag"
+        android:name="android.vergara.tafoda.frags.DetailFrag"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
+</navigation>

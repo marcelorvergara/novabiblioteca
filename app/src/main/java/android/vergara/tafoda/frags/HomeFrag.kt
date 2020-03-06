@@ -36,10 +36,10 @@ class HomeFrag : Fragment() {
             var res = Note.resumo
             var pag = Note.paginas
 
-            var intt = Intent(context,ListaFrag::class.java)
-            var livro = Note(tit,des,aut,res,pag)
-            intt.putExtra("livro",livro)
-            startActivity(intt)
+            //var intt = Intent(context,ListaFrag::class.java)
+            //var livro = Note(tit,des,aut,res,pag)
+            //intt.putExtra("livro",livro)
+            //startActivity(intt)
 
             //Toast.makeText(Context = null,"${Note.title} clicked",Toast.LENGTH_LONG).show()
             Log.i(ContentValues.TAG, "${tit} clicked")

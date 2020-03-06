@@ -22,7 +22,7 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="677dp"
+            android:layout_height="match_parent"
             android:scrollbarStyle="insideInset">
 
             <LinearLayout
@@ -132,14 +132,14 @@
                                 android:text="Reservar"
                                 android:textColor="@android:color/holo_blue_light" />
                         </LinearLayout>
+
+                        <Button
+                            android:id="@+id/btnEditar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Editar" />
                     </LinearLayout>
                 </ScrollView>
-
-                <Button
-                    android:id="@+id/btnSalvar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Editar" />
 
             </LinearLayout>
         </ScrollView>

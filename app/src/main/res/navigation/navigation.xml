@@ -9,15 +9,41 @@
         android:id="@+id/homeFrag"
         android:name="android.vergara.tafoda.frags.HomeFrag"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFrag_to_listaFrag"
+            app:destination="@id/listaFrag" />
+        <action
+            android:id="@+id/action_homeFrag_to_detailFrag"
+            app:destination="@id/detailFrag" />
+    </fragment>
     <fragment
         android:id="@+id/listaFrag"
         android:name="android.vergara.tafoda.frags.ListaFrag"
         android:label="fragment_lista"
-        tools:layout="@layout/fragment_lista" />
+        tools:layout="@layout/fragment_lista" >
+        <action
+            android:id="@+id/action_listaFrag_to_homeFrag"
+            app:destination="@id/homeFrag"
+            app:enterAnim="@anim/fragment_fade_exit"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popEnterAnim="@anim/fragment_fade_exit"
+            app:popExitAnim="@anim/fragment_fade_exit" />
+    </fragment>
     <fragment
         android:id="@+id/detailFrag"
         android:name="android.vergara.tafoda.frags.DetailFrag"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detailFrag_to_listaFrag"
+            app:destination="@id/listaFrag"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_enter"
+            app:popEnterAnim="@anim/fragment_open_enter"
+            app:popExitAnim="@anim/fragment_open_enter" />
+        <action
+            android:id="@+id/action_detailFrag_to_homeFrag"
+            app:destination="@id/homeFrag" />
+    </fragment>
 </navigation>

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_login.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,12 +12,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btnNext.setOnClickListener(){  NextFun() }
+
     }
 
-    fun NextFun(){
-        var intt = Intent(this,HomeActivity::class.java)
-        startActivity(intt)
-    }
 
 }

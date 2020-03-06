@@ -11,12 +11,6 @@
         android:orientation="vertical">
 
 
-        <TextView
-            android:id="@+id/txttitulo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/livro_recyclerview"
             android:layout_width="match_parent"

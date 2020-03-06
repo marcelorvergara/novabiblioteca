@@ -37,6 +37,7 @@
                     android:id="@+id/txtTitulo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:text="titulo"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="@android:color/background_dark"
                     android:textSize="30sp"
@@ -54,7 +55,7 @@
                     android:id="@+id/txtAutor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView"
+                    android:text="autor"
                     android:textSize="18sp" />
 
                 <TextView
@@ -75,7 +76,7 @@
                             android:id="@+id/txtResumo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="TextView" />
+                            android:text="resumo" />
 
                         <TextView
                             android:id="@+id/textView12"
@@ -92,7 +93,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:shadowColor="@android:color/holo_blue_light"
-                                android:text="TextView"
+                                android:text="paginas"
                                 android:textColor="@android:color/holo_blue_light" />
 
                             <TextView
@@ -135,10 +136,10 @@
                 </ScrollView>
 
                 <Button
-                    android:id="@+id/btnVoltar"
+                    android:id="@+id/btnSalvar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Voltar" />
+                    android:text="Editar" />
 
             </LinearLayout>
         </ScrollView>

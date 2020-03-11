@@ -1,5 +1,6 @@
 package android.vergara.tafoda
 
+import android.vergara.tafoda.Model.Note
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup

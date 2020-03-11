@@ -1,4 +1,4 @@
-package android.vergara.tafoda
+package android.vergara.tafoda.Model
 
 import java.io.Serializable
 

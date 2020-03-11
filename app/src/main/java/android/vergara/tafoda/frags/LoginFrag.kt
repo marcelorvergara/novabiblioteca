@@ -55,8 +55,6 @@ class LoginFrag : Fragment() {
             userViewModel = ViewModelProviders.of(it)[UserViewModel::class.java]
         }
 
-
-
         btnCadastro.setOnClickListener {
             var nome = txtNome.text.toString()
             userViewModel!!.user = User(nome,"")

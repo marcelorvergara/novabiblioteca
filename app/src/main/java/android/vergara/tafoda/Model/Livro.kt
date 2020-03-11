@@ -6,5 +6,5 @@ class Livro (
     var descricao: String ="",
     var autor: String ="",
     var resumo: String ="",
-    var pagina: String =""
+    var pagina: Int = 0
 )

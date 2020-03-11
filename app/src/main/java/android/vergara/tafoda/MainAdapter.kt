@@ -1,9 +1,13 @@
 package android.vergara.tafoda
 
 import android.vergara.tafoda.Model.Note
+import android.vergara.tafoda.ViewModel.LivroViewModel
+import android.vergara.tafoda.frags.HomeFrag
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.livro_row.view.*
 
@@ -33,7 +37,6 @@ class MainAdapter(private val notes: List<Note>, val listener: (Note) -> Unit) :
     }
 
     class CustomViewHolder(val view: View): RecyclerView.ViewHolder(view){
-
         val hdr_title= view.note_title
         val hdr_desc = view.note_desc
     }

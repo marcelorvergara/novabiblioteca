@@ -15,7 +15,7 @@
             app:destination="@id/listaFrag" />
         <action
             android:id="@+id/action_homeFrag_to_detailFrag"
-            app:destination="@id/detailFrag" />
+            app:destination="@id/editFrag" />
     </fragment>
     <fragment
         android:id="@+id/listaFrag"
@@ -31,10 +31,10 @@
             app:popExitAnim="@anim/fragment_fade_exit" />
     </fragment>
     <fragment
-        android:id="@+id/detailFrag"
-        android:name="android.vergara.tafoda.frags.DetailFrag"
+        android:id="@+id/editFrag"
+        android:name="android.vergara.tafoda.frags.EditFrag"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" >
+        tools:layout="@layout/fragment_edit" >
         <action
             android:id="@+id/action_detailFrag_to_listaFrag"
             app:destination="@id/listaFrag"

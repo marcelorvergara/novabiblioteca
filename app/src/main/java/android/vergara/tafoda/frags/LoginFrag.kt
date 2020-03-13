@@ -52,7 +52,7 @@ class LoginFrag : Fragment() {
 
         var userModel = userViewModel!!.user?.nome
         var passModel = userViewModel!!.user?.pass
-        if ( userModel != null && !userModel!!.isNullOrBlank()) {
+        if ( userModel != null && !userModel.isNullOrBlank()) {
         //Toast.makeText(this.context!!.applicationContext, "$user", Toast.LENGTH_SHORT ).show()
         //if ( user != null) {
             txtNome.setText("$userModel")
@@ -65,16 +65,18 @@ class LoginFrag : Fragment() {
             findNavController().navigate(R.id.action_loginFrag_to_cadastroFrag)
         }
         btnNext.setOnClickListener{
-            Toast.makeText(this.context!!.applicationContext, "$userModel and $passModel - ${txtNome.text} and ${txtPass.text}", Toast.LENGTH_LONG ).show()
-            if(
-                txtNome.text.toString().equals(userModel) &&
-                txtPass.text.toString().equals(passModel)){
-                    var intt = Intent(this.context!!.applicationContext,HomeActivity::class.java)
-                    startActivity(intt)
-                }
-            else(
-                    Toast.makeText(this.context!!.applicationContext, "Usuário Inválido", Toast.LENGTH_LONG)
-                    )
+//            Toast.makeText(this.context!!.applicationContext, "$userModel and $passModel - ${txtNome.text} and ${txtPass.text}", Toast.LENGTH_LONG ).show()
+//            if(
+//                txtNome.text.toString().equals(userModel) &&
+//                txtPass.text.toString().equals(passModel)){
+//                    var intt = Intent(this.context!!.applicationContext,HomeActivity::class.java)
+//                    startActivity(intt)
+//                }
+//            else(
+//                    Toast.makeText(this.context!!.applicationContext, "Usuário Inválido", Toast.LENGTH_LONG)
+//                    )
+            var intt = Intent(this.context!!.applicationContext,HomeActivity::class.java)
+            startActivity(intt)
         }
     }
 }

@@ -7,6 +7,6 @@
     <item android:id="@+id/listaFrag"
             android:title="Lista"/>
 
-    <item android:id="@+id/detailFrag"
+    <item android:id="@+id/editFrag"
             android:title="Detalhe"/>
 </menu>

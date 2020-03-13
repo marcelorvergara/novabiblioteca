@@ -40,7 +40,7 @@
                     android:text="titulo"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="@android:color/background_dark"
-                    android:textSize="30sp"
+                    android:textSize="24sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -97,7 +97,7 @@
                                 android:textColor="@android:color/holo_blue_light" />
 
                             <TextView
-                                android:id="@+id/textView2"
+                                android:id="@+id/txtPag"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1" />

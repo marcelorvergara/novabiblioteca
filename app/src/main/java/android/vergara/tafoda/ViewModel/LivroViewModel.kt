@@ -6,5 +6,4 @@ import androidx.lifecycle.ViewModel
 class LivroViewModel: ViewModel() {
     lateinit var livro: List<Note>
     lateinit var um_livro : Note
-
 }

@@ -38,28 +38,33 @@ class HomeFrag : Fragment() {
             activity?.let{
                 livroViewModel = ViewModelProviders.of(it)[LivroViewModel::class.java]
             }
-            livro_recyclerview.adapter = MainAdapter(livroViewModel!!.livro) { Note ->
-                val tit = Note.title
-                val des = Note.description
-                val aut = Note.autor
-                val res = Note.resumo
-                val pag = Note.paginas
-
-            var um_livroViewModel: LivroViewModel? = null
-            activity?.let{
-                um_livroViewModel = ViewModelProviders.of(this)[LivroViewModel::class.java]
-            }
-                um_livroViewModel!!.um_livro = Note(tit,des,aut,res,pag)
-                var autor = um_livroViewModel!!.um_livro.autor
-                //var intt = Intent(context,ListaFrag::class.java)
-                //var livro = Note(tit,des,aut,res,pag)
-                //intt.putExtra("livro",livro)
-                //startActivity(intt)
-
-                Toast.makeText(this.context!!.applicationContext,"${autor} clicked",Toast.LENGTH_LONG).show()
-                //Log.i(ContentValues.TAG, "${tit} clicked")
-
-        }
+            livro_recyclerview.adapter = MainAdapter(livroViewModel!!.livro, this::act)
+//            { Note ->
+//                val tit = Note.title
+//                val des = Note.description
+//                val aut = Note.autor
+//                val res = Note.resumo
+//                val pag = Note.paginas
+//
+//                var um_livroViewModel: LivroViewModel? = null
+//                activity?.let{
+//                    um_livroViewModel = ViewModelProviders.of(this)[LivroViewModel::class.java]
+//                    um_livroViewModel!!.um_livro = Note(tit,des,aut,res,pag)
+//                    findNavController().navigate(R.id.action_homeFrag_to_listaFrag)
+//               }
+//                //um_livroViewModel!!.um_livro = Note(tit,des,aut,res,pag)
+//                //var autor = um_livroViewModel!!.um_livro.autor
+//
+//
+//                //var intt = Intent(context,ListaFrag::class.java)
+//                //var livro = Note(tit,des,aut,res,pag)
+//                //intt.putExtra("livro",livro)
+//                //startActivity(intt)
+//
+//                Toast.makeText(this.context!!.applicationContext,"${um_livroViewModel!!.um_livro.autor} clicked",Toast.LENGTH_LONG).show()
+//                //Log.i(ContentValues.TAG, "${tit} clicked")
+//
+//        }
 
         val layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
 
@@ -67,5 +72,32 @@ class HomeFrag : Fragment() {
 
         return rootView
     }
+
+    fun act (note : Note) : Unit {
+        val tit = note.title
+        val des = note.description
+        val aut = note.autor
+        val res = note.resumo
+        val pag = note.paginas
+
+        var um_livroViewModel: LivroViewModel? = null
+        activity?.let{
+            um_livroViewModel = ViewModelProviders.of(this)[LivroViewModel::class.java]
+            um_livroViewModel!!.um_livro = note //Note(tit,des,aut,res,pag)
+            findNavController().navigate(R.id.action_homeFrag_to_listaFrag)
+        }
+        //um_livroViewModel!!.um_livro = Note(tit,des,aut,res,pag)
+        //var autor = um_livroViewModel!!.um_livro.autor
+
+
+        //var intt = Intent(context,ListaFrag::class.java)
+        //var livro = Note(tit,des,aut,res,pag)
+        //intt.putExtra("livro",livro)
+        //startActivity(intt)
+
+        Toast.makeText(this.context!!.applicationContext,"${um_livroViewModel!!.um_livro.autor} clicked",Toast.LENGTH_LONG).show()
+        //Log.i(ContentValues.TAG, "${tit} clicked")
+    }
+
 
 }

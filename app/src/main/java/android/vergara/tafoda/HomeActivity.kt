@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.vergara.tafoda.Model.Note
 import android.vergara.tafoda.ViewModel.LivroViewModel
+import android.vergara.tafoda.frags.HomeFrag
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
@@ -25,6 +26,7 @@ class HomeActivity : AppCompatActivity() {
         //ViewModel
         var livroViewModel = ViewModelProviders.of(this)[LivroViewModel::class.java]
         livroViewModel.livro = notes()
+        livroViewModel.um_livro = Note("","","","",0)
     }
 
 

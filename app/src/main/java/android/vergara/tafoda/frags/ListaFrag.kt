@@ -3,6 +3,7 @@ package android.vergara.tafoda.frags
 
 
 import android.os.Bundle
+import android.util.Log
 import android.vergara.tafoda.Model.Note
 import android.vergara.tafoda.R
 import android.vergara.tafoda.ViewModel.LivroViewModel
@@ -24,6 +25,9 @@ class ListaFrag : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_lista, container, false)
     }
@@ -33,16 +37,20 @@ class ListaFrag : Fragment() {
 
         var umLivroViewModel: LivroViewModel? = null
         activity?.let{
-            umLivroViewModel = ViewModelProviders.of(it)[LivroViewModel::class.java]
+            umLivroViewModel = ViewModelProviders.of(it).get(LivroViewModel::class.java)
         }
+        val titulo = umLivroViewModel!!.um_livro.title
+        if (umLivroViewModel!!.um_livro != null)
+            Log.i("LivroViewModel", "Livro não é nulo: ${umLivroViewModel!!.um_livro}")
+        else
+            Log.i("LivroViewModel", "Livro é nulo")
+        //txtTitulo.setText(titulo)
+//        txtDesc.setText(umLivroViewModel!!.um_livro.description)
+//        txtAutor.setText(umLivroViewModel!!.um_livro.autor)
+//        txtResumo.setText(umLivroViewModel!!.um_livro.resumo)
+        //txtPagina.setText(umLivroViewModel!!.um_livro.paginas)
 
-        txtTitulo.setText(umLivroViewModel!!.um_livro.title)
-        txtDesc.setText(umLivroViewModel!!.um_livro.description)
-        txtAutor.setText(umLivroViewModel!!.um_livro.autor)
-        txtResumo.setText(umLivroViewModel!!.um_livro.resumo)
-        txtPagina.setText(umLivroViewModel!!.um_livro.paginas)
-
-        Toast.makeText(this.context!!.applicationContext, umLivroViewModel!!.um_livro.autor,Toast.LENGTH_LONG).show()
+        Toast.makeText(this.context!!.applicationContext, "${titulo}",Toast.LENGTH_LONG).show()
 
     }
 }

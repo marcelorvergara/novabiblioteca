@@ -39,7 +39,7 @@ class ListaFrag : Fragment() {
         activity?.let{
             umLivroViewModel = ViewModelProviders.of(it).get(LivroViewModel::class.java)
         }
-        val titulo = umLivroViewModel!!.um_livro.title
+        val titulo = umLivroViewModel!!.um_livro!!.title
         if (umLivroViewModel!!.um_livro != null)
             Log.i("LivroViewModel", "Livro não é nulo: ${umLivroViewModel!!.um_livro}")
         else

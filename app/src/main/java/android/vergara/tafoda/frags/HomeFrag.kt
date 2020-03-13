@@ -38,6 +38,7 @@ class HomeFrag : Fragment() {
             activity?.let{
                 livroViewModel = ViewModelProviders.of(it)[LivroViewModel::class.java]
             }
+
             livro_recyclerview.adapter = MainAdapter(livroViewModel!!.livro, this::act)
 //            { Note ->
 //                val tit = Note.title
@@ -95,7 +96,7 @@ class HomeFrag : Fragment() {
         //intt.putExtra("livro",livro)
         //startActivity(intt)
 
-        Toast.makeText(this.context!!.applicationContext,"${um_livroViewModel!!.um_livro.autor} clicked",Toast.LENGTH_LONG).show()
+        Toast.makeText(this.context!!.applicationContext,"${um_livroViewModel!!.um_livro!!.autor} clicked",Toast.LENGTH_LONG).show()
         //Log.i(ContentValues.TAG, "${tit} clicked")
     }
 

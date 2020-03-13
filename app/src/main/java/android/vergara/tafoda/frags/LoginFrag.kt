@@ -12,9 +12,11 @@ import android.view.ViewGroup
 
 import android.vergara.tafoda.R
 import android.vergara.tafoda.ViewModel.UserViewModel
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
+import kotlinx.android.synthetic.main.fragment_cadastro.*
 import kotlinx.android.synthetic.main.fragment_login.*
 
 /**
@@ -55,12 +57,18 @@ class LoginFrag : Fragment() {
             userViewModel = ViewModelProviders.of(it)[UserViewModel::class.java]
         }
 
-        btnCadastro.setOnClickListener {
-            var nome = txtNome.text.toString()
-            userViewModel!!.user = User(nome,"")
-            findNavController().navigate(R.id.action_loginFrag_to_cadastroFrag)
+        var user = userViewModel!!.user?.nome
+        if ( user != null && !user!!.isNullOrBlank()) {
+        //Toast.makeText(this.context!!.applicationContext, "$user", Toast.LENGTH_SHORT ).show()
+        //if ( user != null) {
+            txtNome.setText("$user")
         }
 
-
+        btnCadastro.setOnClickListener {
+            var nome = txtNome.text.toString()
+            var pass = txtPass.text.toString()
+            userViewModel!!.user = User(nome,pass)
+            findNavController().navigate(R.id.action_loginFrag_to_cadastroFrag)
+        }
     }
 }

@@ -27,6 +27,8 @@ class HomeActivity : AppCompatActivity() {
         var livroViewModel = ViewModelProviders.of(this)[LivroViewModel::class.java]
         livroViewModel.livro = notes()
         livroViewModel.um_livro = Note("","","","",0)
+
+
     }
 
 

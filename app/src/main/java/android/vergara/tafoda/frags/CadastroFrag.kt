@@ -2,6 +2,7 @@ package android.vergara.tafoda.frags
 
 
 import android.os.Bundle
+import android.vergara.tafoda.Model.User
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import android.view.ViewGroup
 import android.vergara.tafoda.R
 import android.vergara.tafoda.ViewModel.UserViewModel
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_cadastro.*
 
 /**
@@ -35,6 +37,11 @@ class CadastroFrag : Fragment() {
             userViewModel = ViewModelProviders.of(it)[UserViewModel::class.java]
         }
         edtNome.setText(userViewModel!!.user!!.nome)
+        edtSenha.setText((userViewModel!!.user!!.pass))
 
+        btnCadastrar.setOnClickListener{
+            userViewModel?.user = User(edtNome.text.toString(),edtSenha.text.toString())
+            findNavController().navigate(R.id.action_cadastroFrag_to_loginFrag)
+        }
     }
 }

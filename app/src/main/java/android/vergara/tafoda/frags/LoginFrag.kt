@@ -44,24 +44,18 @@ class LoginFrag : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        btnNext.setOnClickListener{
-            var intt = Intent(this.context!!.applicationContext,HomeActivity::class.java)
-            startActivity(intt)
-        }
-
-
-        //var email = txtEmail.text.toString()
 
         var userViewModel: UserViewModel? = null
         activity?.let{
             userViewModel = ViewModelProviders.of(it)[UserViewModel::class.java]
         }
 
-        var user = userViewModel!!.user?.nome
-        if ( user != null && !user!!.isNullOrBlank()) {
+        var userModel = userViewModel!!.user?.nome
+        var passModel = userViewModel!!.user?.pass
+        if ( userModel != null && !userModel!!.isNullOrBlank()) {
         //Toast.makeText(this.context!!.applicationContext, "$user", Toast.LENGTH_SHORT ).show()
         //if ( user != null) {
-            txtNome.setText("$user")
+            txtNome.setText("$userModel")
         }
 
         btnCadastro.setOnClickListener {
@@ -69,6 +63,18 @@ class LoginFrag : Fragment() {
             var pass = txtPass.text.toString()
             userViewModel!!.user = User(nome,pass)
             findNavController().navigate(R.id.action_loginFrag_to_cadastroFrag)
+        }
+        btnNext.setOnClickListener{
+            Toast.makeText(this.context!!.applicationContext, "$userModel and $passModel - ${txtNome.text} and ${txtPass.text}", Toast.LENGTH_LONG ).show()
+            if(
+                txtNome.text.toString().equals(userModel) &&
+                txtPass.text.toString().equals(passModel)){
+                    var intt = Intent(this.context!!.applicationContext,HomeActivity::class.java)
+                    startActivity(intt)
+                }
+            else(
+                    Toast.makeText(this.context!!.applicationContext, "Usuário Inválido", Toast.LENGTH_LONG)
+                    )
         }
     }
 }

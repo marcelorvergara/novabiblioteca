@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.vergara.tafoda.Model.Note
 import android.vergara.tafoda.ViewModel.LivroViewModel
 import android.vergara.tafoda.frags.HomeFrag
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
@@ -12,6 +13,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.fragment_login.*
 
 class HomeActivity : AppCompatActivity() {
 
@@ -26,8 +28,14 @@ class HomeActivity : AppCompatActivity() {
         //ViewModel
         var livroViewModel = ViewModelProviders.of(this)[LivroViewModel::class.java]
         livroViewModel.livro = notes()
-        livroViewModel.um_livro = Note("","","","",0)
-
+        livroViewModel.um_livro = Note("", "", "", "", 0)
+        Toast.makeText(this, "$livroViewModel.livro and $livroViewModel.um_livro", Toast.LENGTH_LONG ).show()
+//        if(livroViewModel.livro == null) {
+//            livroViewModel.livro = notes()
+//        }
+//        if(livroViewModel.um_livro == null) {
+//            livroViewModel.um_livro = Note("", "", "", "", 0)
+//        }
 
     }
 

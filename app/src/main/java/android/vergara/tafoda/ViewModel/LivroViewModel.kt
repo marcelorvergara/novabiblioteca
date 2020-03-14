@@ -153,7 +153,9 @@ class LivroViewModel: ViewModel() {
             Log.i("teste", "Passou por aqui")
             var index = note.index-1
             theBooks[index] = note
+
             Log.i("teste", "${theBooks[index]}")
+            return theBooks
         }
         return theBooks
     }

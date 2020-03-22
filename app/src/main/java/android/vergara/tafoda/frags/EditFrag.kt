@@ -51,7 +51,7 @@ class EditFrag : Fragment(){
             edtTitulo.setText("Nenhum livro selecionado")
         }else {
             // não está vazio
-            Toast.makeText(this.context!!.applicationContext,"Ok, livro selecionado com sucesso ${umLivroViewModel.um_livro.index}",
+            Toast.makeText(this.context!!.applicationContext,"Ok, livro selecionado com sucesso ${umLivroViewModel.um_livro.ind}",
                 Toast.LENGTH_SHORT).show()
         }
         btnSalvar.setOnClickListener{
@@ -60,11 +60,10 @@ class EditFrag : Fragment(){
             var autor = edtAutor.text.toString()
             var resumo = edtResumo.text.toString()
             var paginas = edtPag.text.toString()
-            var pg = paginas.toInt()
-            var indice = umLivroViewModel.um_livro.index
+            var indice = umLivroViewModel.um_livro.ind
 
-            var theNoteBook = Note(titulo,descricao,autor,resumo,pg,indice)
-            umLivroViewModel.notes(theNoteBook)
+            var theNoteBook = Note(titulo,descricao,autor,resumo,paginas,indice)
+//            umLivroViewModel.notes(theNoteBook)
             findNavController().navigate(R.id.homeFrag)
         }
     }

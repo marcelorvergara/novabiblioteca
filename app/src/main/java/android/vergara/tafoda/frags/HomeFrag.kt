@@ -9,6 +9,7 @@ import android.vergara.tafoda.Model.Note
 import android.vergara.tafoda.R
 import android.vergara.tafoda.ViewModel.LivroViewModel
 import android.vergara.tafoda.ViewModel.UserViewModel
+import android.vergara.tafoda.db.LivrosDBHelper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -25,8 +26,12 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 class HomeFrag : Fragment() {
 
     lateinit var livroViewModel: LivroViewModel
+    lateinit var livrosDBHelper : LivrosDBHelper
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        livrosDBHelper = LivrosDBHelper(this.context!!.applicationContext)
+
+        Toast.makeText(this.context!!.applicationContext,livrosDBHelper.readAllLivros().toString(),Toast.LENGTH_SHORT).show()
         var rootView = inflater.inflate(R.layout.fragment_home, container, false)
 
         var livro_recyclerview = rootView.findViewById(R.id.livro_recyclerview) as RecyclerView // Add this
@@ -36,7 +41,7 @@ class HomeFrag : Fragment() {
 
         activity?.let{
             livroViewModel = ViewModelProviders.of(it)[LivroViewModel::class.java]
-            livroViewModel.livro = livroViewModel.notes(null)
+            livroViewModel.livro = livroViewModel.notes()
         }
 
         livro_recyclerview.adapter = MainAdapter(livroViewModel!!.livro, this::act)

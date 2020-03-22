@@ -6,8 +6,11 @@ class Note (val title: String,
             val description: String,
             val autor: String,
             val resumo: String,
-            val paginas: Int,
-            val index: Int): Serializable
+            val paginas: String,
+            val ind: String): Serializable {
+
+
+}
 //{
 //    override fun toString(): String {
 //        return "${title}, ${description}, ${autor}"

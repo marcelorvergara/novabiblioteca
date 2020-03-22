@@ -3,7 +3,9 @@ package android.vergara.tafoda.frags
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.vergara.tafoda.HomeActivity
+import android.vergara.tafoda.Model.Note
 import android.vergara.tafoda.Model.User
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,7 +13,9 @@ import android.view.View
 import android.view.ViewGroup
 
 import android.vergara.tafoda.R
+import android.vergara.tafoda.ViewModel.LivroViewModel
 import android.vergara.tafoda.ViewModel.UserViewModel
+import android.vergara.tafoda.db.LivrosDBHelper
 import android.vergara.tafoda.db.UsersDBHelper
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
@@ -26,6 +30,7 @@ import kotlinx.android.synthetic.main.fragment_login.*
 class LoginFrag : Fragment() {
 
     lateinit var usersDBHelper : UsersDBHelper
+    lateinit var livrosDBHelper : LivrosDBHelper
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,6 +38,7 @@ class LoginFrag : Fragment() {
     ): View? {
 
         usersDBHelper = UsersDBHelper(this.context!!.applicationContext)
+        livrosDBHelper = LivrosDBHelper(this.context!!.applicationContext)
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_login, container, false)
 
@@ -46,6 +52,11 @@ class LoginFrag : Fragment() {
         var userViewModel: UserViewModel? = null
         activity?.let{
             userViewModel = ViewModelProviders.of(it)[UserViewModel::class.java]
+        }
+
+        var livroViewModel: LivroViewModel? = null
+        activity?.let{
+            livroViewModel = ViewModelProviders.of(it)[LivroViewModel::class.java]
         }
 
         val userModel = userViewModel!!.user?.nome
@@ -74,6 +85,11 @@ class LoginFrag : Fragment() {
                     Toast.LENGTH_SHORT
                 ).show()
             } else {
+                val note : List<Note> = livroViewModel!!.notes()
+                for (note in note) {
+                    livrosDBHelper.insertLivro(Note(title = note.title,description = note.description,autor = note.autor,resumo = note.resumo,paginas = note.paginas,ind = note.ind))
+                }
+
                 val intt = Intent(this.context!!.applicationContext, HomeActivity::class.java)
                 startActivity(intt)
             }

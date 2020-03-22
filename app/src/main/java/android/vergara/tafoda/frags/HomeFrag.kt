@@ -31,17 +31,20 @@ class HomeFrag : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         livrosDBHelper = LivrosDBHelper(this.context!!.applicationContext)
 
-        Toast.makeText(this.context!!.applicationContext,livrosDBHelper.readAllLivros().toString(),Toast.LENGTH_SHORT).show()
-        var rootView = inflater.inflate(R.layout.fragment_home, container, false)
+        //Toast.makeText(this.context!!.applicationContext,livrosDBHelper.readAllLivros().toString(),Toast.LENGTH_SHORT).show()
+        val rootView = inflater.inflate(R.layout.fragment_home, container, false)
 
-        var livro_recyclerview = rootView.findViewById(R.id.livro_recyclerview) as RecyclerView // Add this
+        val livro_recyclerview = rootView.findViewById(R.id.livro_recyclerview) as RecyclerView // Add this
         //livro_recyclerview.adapter = MainAdapter(notes()) { Note ->
 
         //usando viewmodel
 
         activity?.let{
             livroViewModel = ViewModelProviders.of(it)[LivroViewModel::class.java]
-            livroViewModel.livro = livroViewModel.notes()
+            //viewmodel
+            //livroViewModel.livro = livroViewModel.notes()
+            //tabelas SQLite
+            livroViewModel.livro = livrosDBHelper.readAllLivros()
         }
 
         livro_recyclerview.adapter = MainAdapter(livroViewModel!!.livro, this::act)

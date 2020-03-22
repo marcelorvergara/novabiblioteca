@@ -51,10 +51,11 @@ class ListaFrag : Fragment() {
         {
             // not null not empty
             Toast.makeText(this.context!!.applicationContext,"É necessário clicar em um livro na Home",Toast.LENGTH_LONG).show()
+            findNavController().navigate(R.id.homeFrag)
             txtTitulo.setText("Nenhum livro selecionado")
         }else {
             //null or empty
-            Toast.makeText(this.context!!.applicationContext,"Ok, livro selecionado com sucesso",Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this.context!!.applicationContext,"Ok, livro selecionado com sucesso",Toast.LENGTH_SHORT).show()
         }
         btnEditar.setOnClickListener{
             findNavController().navigate(R.id.editFrag)

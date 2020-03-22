@@ -111,6 +111,63 @@ class LivrosDBHelper(context: Context) : SQLiteOpenHelper(context,DATABASE_NAME,
         return livros
     }
 
+    @Throws(SQLiteConstraintException::class)
+    fun updateLivro(livro: Note): Boolean{
+        //abrir o repositório de dados em modo de escrita
+        val db = writableDatabase
+
+        //criar um novo mapa de valores onde o nome das colunas são as keys
+        val values = ContentValues()
+        values.put(DBContractLivros.LivroEntry.COLUMN_TITLE,livro.title)
+        values.put(DBContractLivros.LivroEntry.COLUMN_DESC,livro.description)
+        values.put(DBContractLivros.LivroEntry.COLUMN_AUTOR, livro.autor)
+        values.put(DBContractLivros.LivroEntry.COLUMN_RESUMO, livro.resumo)
+        values.put(DBContractLivros.LivroEntry.COLUMN_PAGINAS, livro.paginas)
+        values.put(DBContractLivros.LivroEntry.COLUMN_IND, livro.ind)
+
+        val newRowId = db.update(DBContractLivros.LivroEntry.TABLE_LIVROS,values, "ind="+livro.ind,null)
+        return true
+    }
+
+    fun readIndices(): Int? {
+        val livros = ArrayList<Int>()
+        var maior : Int = 0
+        val db = writableDatabase
+        var cursor: Cursor? = null
+        try {
+            cursor = db.rawQuery("select ind from " + DBContractLivros.LivroEntry.TABLE_LIVROS, null)
+        } catch (e: SQLiteException) {
+            db.execSQL(SQL_CREATE_ENTRIES)
+            return maior
+        }
+
+        var ind: String
+        if(cursor!!.moveToFirst()){
+            while (cursor.isAfterLast == false){
+                ind = cursor.getString(cursor.getColumnIndex(DBContractLivros.LivroEntry.COLUMN_IND))
+                livros.add(ind.toInt())
+                cursor.moveToNext()
+            }
+
+        }
+        maior = livros.max()!!
+        return maior
+    }
+
+    @Throws(SQLiteConstraintException::class)
+    fun deleteLivro(ind: String): Boolean {
+        // Gets the data repository in write mode
+        val db = writableDatabase
+        // Define 'where' part of query.
+        val selection = DBContractLivros.LivroEntry.COLUMN_IND + " LIKE ?"
+        // Specify arguments in placeholder order.
+        val selectionArgs = arrayOf(ind)
+        // Issue SQL statement.
+        db.delete(DBContractLivros.LivroEntry.TABLE_LIVROS, selection, selectionArgs)
+
+        return true
+    }
+
     companion object{
         //se o esquema do banco mudar, devemos incrementar a versão abaixo
         val DATABASE_VERSION = 18

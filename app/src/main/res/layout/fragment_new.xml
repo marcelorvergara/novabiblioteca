@@ -22,7 +22,9 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginLeft="28dip"
+            android:layout_marginRight="24dip">
 
             <LinearLayout
                 android:layout_width="match_parent"

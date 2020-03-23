@@ -30,7 +30,8 @@ class ListaFrag : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-            // Inflate the layout for this fragment
+
+        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_lista, container, false)
     }
 
@@ -40,30 +41,21 @@ class ListaFrag : Fragment() {
         activity?.let{
             umLivroViewModel = ViewModelProviders.of(it).get(LivroViewModel::class.java)
         }
-        txtTitulo.setText(umLivroViewModel.um_livro.title.toString())
+        txtTitulo.setText(umLivroViewModel.um_livro.title)
         txtDesc.setText(umLivroViewModel.um_livro.description)
         txtAutor.setText(umLivroViewModel.um_livro.autor)
         txtResumo.setText(umLivroViewModel.um_livro.resumo)
-        var pg: String = umLivroViewModel.um_livro.paginas.toString()
-        txtPag.setText(" " + pg)
+        txtPag.setText(umLivroViewModel.um_livro.paginas)
 
         if(txtTitulo.getText().toString() == "")
         {
             // not null not empty
             Toast.makeText(this.context!!.applicationContext,"É necessário clicar em um livro na Home",Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.homeFrag)
-            txtTitulo.setText("Nenhum livro selecionado")
-        }else {
-            //null or empty
-            //Toast.makeText(this.context!!.applicationContext,"Ok, livro selecionado com sucesso",Toast.LENGTH_SHORT).show()
         }
         btnEditar.setOnClickListener{
             findNavController().navigate(R.id.editFrag)
         }
 
-        //  if (umLivroViewModel!!.um_livro != null)
-        // Log.i("LivroViewModel", "Livro não é nulo porra: ${umLivroViewModel!!.um_livro.paginas}")
-        // else
-        // Log.i("LivroViewModel", "Livro é nulo")
     }
 }

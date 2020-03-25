@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
 import android.vergara.tafoda.R
 import android.vergara.tafoda.ViewModel.LivroViewModel
 import android.vergara.tafoda.ViewModel.UserViewModel
@@ -80,7 +79,7 @@ class LoginFrag : Fragment() {
             if (pass != txtPass.text.toString()) {
                 Toast.makeText(
                     this.context!!.applicationContext,
-                    "Password Inválido",
+                    "Password Inválido ou Login não Cadastrado",
                     Toast.LENGTH_SHORT
                 ).show()
             } else {
@@ -88,10 +87,10 @@ class LoginFrag : Fragment() {
                 for (note in note) {
                     livrosDBHelper.insertLivro(Note(title = note.title,description = note.description,autor = note.autor,resumo = note.resumo,paginas = note.paginas,ind = note.ind))
                 }
-                livroViewModel.total = livrosDBHelper.countLivros()
-
-                Log.i("teste5","DB ${livrosDBHelper.countLivros().toString()}")
-                Log.i("teste5"," VM ${livroViewModel!!.total.toString()}")
+                val totLivros = livrosDBHelper.countLivros()
+                livroViewModel.total = totLivros
+                Log.i("teste5","DataB ${livrosDBHelper.countLivros().toString()}")
+                Log.i("teste5","ViewM ${livroViewModel!!.total.toString()}")
                 val intt = Intent(this.context!!.applicationContext, HomeActivity::class.java)
                 startActivity(intt)
             }

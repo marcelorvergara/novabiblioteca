@@ -49,14 +49,18 @@ class HomeFrag : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        livroViewModel = ViewModelProviders.of(this)[LivroViewModel::class.java]
 
-        Log.i("teste4", livroViewModel.total_livros.toString())
+        activity?.let {
+            livroViewModel = ViewModelProviders.of(this)[LivroViewModel::class.java]
+        }
+        Log.i("teste4", livroViewModel.total_livros.value.toString())
         livroViewModel.total_livros.observe(viewLifecycleOwner, Observer {
             //contador de livros
             txt2.text = it.toString()
             //txtRvTot.text = livrosDBHelper.countLivros().toString()
         })
+        Log.i("teste5", livroViewModel.total.toString())
+        txt2.text = livrosDBHelper.countLivros().toString()
     }
 
     fun act (note : Note) : Unit {

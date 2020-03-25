@@ -2,11 +2,18 @@ package android.vergara.tafoda.ViewModel
 
 import android.util.Log
 import android.vergara.tafoda.Model.Note
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class LivroViewModel: ViewModel() {
     lateinit var livro: List<Note>
     lateinit var um_livro : Note
+    var total_livros = MutableLiveData<Int>()
+    var total: Int = 0
+        set(value) {
+            total_livros.value = total
+            field = value
+        }
 
     fun notes(): List<Note> {
 

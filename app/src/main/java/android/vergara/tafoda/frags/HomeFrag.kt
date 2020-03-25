@@ -15,10 +15,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import kotlinx.android.synthetic.main.fragment_home.*
 
 /**
  * A simple [Fragment] subclass.
@@ -43,6 +45,18 @@ class HomeFrag : Fragment() {
         livro_recyclerview.layoutManager = layoutManager
 
         return rootView
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        livroViewModel = ViewModelProviders.of(this)[LivroViewModel::class.java]
+
+        Log.i("teste4", livroViewModel.total_livros.toString())
+        livroViewModel.total_livros.observe(viewLifecycleOwner, Observer {
+            //contador de livros
+            txt2.text = it.toString()
+            //txtRvTot.text = livrosDBHelper.countLivros().toString()
+        })
     }
 
     fun act (note : Note) : Unit {

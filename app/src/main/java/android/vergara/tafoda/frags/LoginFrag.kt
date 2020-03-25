@@ -31,6 +31,7 @@ class LoginFrag : Fragment() {
 
     lateinit var usersDBHelper : UsersDBHelper
     lateinit var livrosDBHelper : LivrosDBHelper
+    lateinit var livroViewModel: LivroViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,8 +42,6 @@ class LoginFrag : Fragment() {
         livrosDBHelper = LivrosDBHelper(this.context!!.applicationContext)
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_login, container, false)
-
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -54,7 +53,7 @@ class LoginFrag : Fragment() {
             userViewModel = ViewModelProviders.of(it)[UserViewModel::class.java]
         }
 
-        var livroViewModel: LivroViewModel? = null
+
         activity?.let{
             livroViewModel = ViewModelProviders.of(it)[LivroViewModel::class.java]
         }
@@ -89,7 +88,10 @@ class LoginFrag : Fragment() {
                 for (note in note) {
                     livrosDBHelper.insertLivro(Note(title = note.title,description = note.description,autor = note.autor,resumo = note.resumo,paginas = note.paginas,ind = note.ind))
                 }
+                livroViewModel.total = livrosDBHelper.countLivros()
 
+                Log.i("teste5","DB ${livrosDBHelper.countLivros().toString()}")
+                Log.i("teste5"," VM ${livroViewModel!!.total.toString()}")
                 val intt = Intent(this.context!!.applicationContext, HomeActivity::class.java)
                 startActivity(intt)
             }

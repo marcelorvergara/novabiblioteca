@@ -167,7 +167,33 @@ class LivrosDBHelper(context: Context) : SQLiteOpenHelper(context,DATABASE_NAME,
 
         return true
     }
+    fun countLivros() : Int{
+        val livros = ArrayList<Int>()
+        var tot : Int = 0
+        val db = writableDatabase
+        var cursor: Cursor? = null
+        try {
+            cursor = db.rawQuery("select ind from " + DBContractLivros.LivroEntry.TABLE_LIVROS, null)
+        } catch (e: SQLiteException) {
+            db.execSQL(SQL_CREATE_ENTRIES)
+            return tot
+        }
 
+        var ind: String
+        var incr : Int =0
+        if(cursor!!.moveToFirst()){
+            while (cursor.isAfterLast == false){
+                ind = cursor.getString(cursor.getColumnIndex(DBContractLivros.LivroEntry.COLUMN_IND))
+                livros.add(ind.toInt())
+                cursor.moveToNext()
+                ++incr
+            }
+
+        }
+
+        return incr
+
+    }
     companion object{
         //se o esquema do banco mudar, devemos incrementar a versão abaixo
         val DATABASE_VERSION = 18

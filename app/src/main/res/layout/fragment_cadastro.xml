@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     tools:context=".frags.CadastroFrag">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,19 +19,23 @@
             android:layout_marginLeft="32dp"
             android:layout_marginTop="32dp"
             android:ems="10"
-            android:hint="Insira seu nome"
+            android:hint="@string/insira_seu_nome"
             android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtId" />
+            app:layout_constraintTop_toBottomOf="@+id/edtId"
+            android:autofillHints="" />
 
         <Button
             android:id="@+id/btnCadastrar"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginLeft="32dp"
             android:layout_marginTop="32dp"
-            android:text="Cadastrar"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:text="@string/cadastrar"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edtSenha2" />
 
@@ -41,9 +46,10 @@
             android:layout_marginStart="32dp"
             android:layout_marginLeft="32dp"
             android:layout_marginTop="24dp"
+            android:autofillHints=""
             android:ems="10"
-            android:hint="Confirmar sua senha"
-            android:inputType="textPersonName"
+            android:hint="@string/confirmar_sua_senha"
+            android:inputType="textPassword"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edtSenha" />
 
@@ -54,9 +60,10 @@
             android:layout_marginStart="32dp"
             android:layout_marginLeft="32dp"
             android:layout_marginTop="40dp"
+            android:autofillHints=""
             android:ems="10"
-            android:hint="Cadastre sua senha"
-            android:inputType="textPersonName"
+            android:hint="@string/cadastre_sua_senha"
+            android:inputType="textPassword"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edtNome" />
 
@@ -67,7 +74,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginLeft="32dp"
             android:layout_marginTop="58dp"
-            android:text="Cadastro de Usuário"
+            android:text="@string/cadastro_de_usu_rio"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -80,10 +87,25 @@
             android:layout_marginLeft="32dp"
             android:layout_marginTop="32dp"
             android:ems="10"
-            android:hint="Escolha um apelido"
+            android:hint="@string/escolha_um_apelido"
             android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            android:autofillHints="" />
+
+        <ImageView
+            android:id="@+id/imgEye"
+            android:layout_width="33dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="31dp"
+            android:layout_marginLeft="31dp"
+            android:layout_marginTop="286dp"
+            android:src="@drawable/ic_visibility_black_24dp"
+            app:layout_constraintStart_toEndOf="@+id/edtSenha"
+            app:layout_constraintTop_toTopOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </FrameLayout>

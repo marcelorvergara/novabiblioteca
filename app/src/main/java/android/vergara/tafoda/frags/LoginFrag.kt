@@ -46,16 +46,16 @@ class LoginFrag : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         var userViewModel: UserViewModel? = null
         activity?.let{
             userViewModel = ViewModelProviders.of(it)[UserViewModel::class.java]
         }
-
-
         activity?.let{
             livroViewModel = ViewModelProviders.of(it)[LivroViewModel::class.java]
         }
+
+        //usuário teste
+        usersDBHelper.insertUser(User(userid = "Vergara", nome = "1", pass = "1"))
 
         val userModel = userViewModel!!.user?.nome
         val passModel = userViewModel!!.user?.pass

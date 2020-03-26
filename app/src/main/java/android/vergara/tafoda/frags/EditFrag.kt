@@ -55,8 +55,8 @@ class EditFrag : Fragment(){
             edtTitulo.setText("Nenhum livro selecionado")
         }else {
             // não está vazio
-            Toast.makeText(this.context!!.applicationContext,"Ok, livro selecionado com sucesso ${umLivroViewModel.um_livro.ind}",
-                Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this.context!!.applicationContext,"Ok, livro selecionado com sucesso ${umLivroViewModel.um_livro.ind}",
+            //    Toast.LENGTH_SHORT).show()
         }
         btnSalvar.setOnClickListener{
             val titulo = edtTitulo.text.toString()

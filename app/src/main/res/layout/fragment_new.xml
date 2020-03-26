@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     tools:context=".frags.NewFrag">
 
 
@@ -103,24 +104,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1" />
-
-                    <TextView
-                        android:id="@+id/txtLer"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:shadowColor="@android:color/holo_blue_light"
-                        android:text="Ler"
-                        android:textColor="@android:color/holo_blue_light" />
-
-                    <TextView
-                        android:id="@+id/txtReservar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:shadowColor="@android:color/holo_blue_light"
-                        android:text="Reservar"
-                        android:textColor="@android:color/holo_blue_light" />
 
                 </LinearLayout>
 

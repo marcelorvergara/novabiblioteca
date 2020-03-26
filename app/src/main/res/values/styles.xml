@@ -6,8 +6,12 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-    </style>
+        <item name="buttonStyle">@style/AppTheme.RoundedCornerMaterialButton</item>
 
+    </style>
+    <style name="AppTheme.RoundedCornerMaterialButton" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:background">@drawable/rounded_shape</item>
+    </style>
 
     <style name="NavigationDrawerStyle">
 
@@ -24,11 +28,15 @@
         <!-- item padding right in menu-->
         <item name="android:listPreferredItemPaddingRight">8dp</item>
         <item name="listPreferredItemPaddingRight">8dp</item>
+
+
     </style>
 
     <style name="Widget.BottomNavigationView"
         parent="Widget.Design.BottomNavigationView">
         <item name="fontFamily">sans-serif</item>
         <item name="android:textSize">22sp</item>
+        <item name="android:color">@color/colorAccent</item>
+
     </style>
 </resources>

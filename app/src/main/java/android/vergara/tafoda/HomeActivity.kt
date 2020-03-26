@@ -22,15 +22,18 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        //seta a navegação com o botão de navegação
+        if (savedInstanceState == null) {
+            //rotação
+
+
+            //ViewModel
+            var livroViewModel = ViewModelProviders.of(this)[LivroViewModel::class.java]
+            //livroViewModel.livro = notes()
+            livroViewModel.um_livro = Note("", "", "", "", "", "")
+        }
+
         botnNav.setupWithNavController(findNavController(R.id.navFrag))
-
-        //ViewModel
-        var livroViewModel = ViewModelProviders.of(this)[LivroViewModel::class.java]
-        //livroViewModel.livro = notes()
-        livroViewModel.um_livro = Note("", "", "", "", "", "")
     }
-
 
 
 

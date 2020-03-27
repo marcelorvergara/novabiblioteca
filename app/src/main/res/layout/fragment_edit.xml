@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
     tools:context=".frags.EditFrag">
 
 
@@ -25,24 +24,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="28dip"
-            android:layout_marginRight="22dip"
-            android:background="@android:color/white"
-            android:layout_marginStart="28dip"
-            android:layout_marginEnd="22dip">
+            android:layout_marginRight="22dip">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/white"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <EditText
                     android:id="@+id/edtTitulo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:autofillHints=""
-                    android:hint="@string/titulo_do_livro"
-                    android:inputType="textAutoCorrect"
+                    android:hint="Titulo do Livro"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="@android:color/background_dark"
                     android:textSize="30sp"
@@ -52,9 +45,7 @@
                     android:id="@+id/edtDesc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:autofillHints=""
-                    android:hint="@string/descri_o_ou_subt_tulo"
-                    android:inputType="textAutoCorrect"
+                    android:hint="Descrição ou subtítulo"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="@android:color/background_dark"
                     android:textSize="22sp" />
@@ -63,9 +54,7 @@
                     android:id="@+id/edtAutor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:autofillHints=""
-                    android:hint="@string/autor_do_livro"
-                    android:inputType="textAutoCorrect"
+                    android:hint="Autor do livro"
                     android:textSize="18sp" />
 
                 <TextView
@@ -77,9 +66,7 @@
                     android:id="@+id/edtResumo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:autofillHints=""
-                    android:hint="@string/resumo2"
-                    android:inputType="textAutoCorrect" />
+                    android:hint="Resumo" />
 
                 <TextView
                     android:id="@+id/textViewBlank12"
@@ -89,23 +76,19 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@android:color/white"
                     android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/txtPagina"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/p_ginas" />
+                        android:text="Páginas: " />
 
                     <EditText
                         android:id="@+id/edtPag"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:autofillHints=""
-                        android:hint="@string/paginas"
-                        android:inputType="number" />
+                        android:layout_weight="1" />
 
                     <TextView
                         android:id="@+id/textView4"
@@ -119,22 +102,34 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1" />
 
-                </LinearLayout>
+                    <TextView
+                        android:id="@+id/txtLer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:shadowColor="@android:color/holo_blue_light"
+                        android:text="Ler"
+                        android:textColor="@android:color/holo_blue_light" />
 
-                <View
-                    android:id="@+id/divider4"
-                    android:layout_width="match_parent"
-                    android:layout_height="8dp"
-                    android:background="@android:color/white" />
+                    <TextView
+                        android:id="@+id/txtReservar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:shadowColor="@android:color/holo_blue_light"
+                        android:text="Reservar"
+                        android:textColor="@android:color/holo_blue_light" />
+
+                </LinearLayout>
 
                 <Button
                     android:id="@+id/btnSalvar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/salvar" />
+                    android:text="Salvar" />
 
                 <View
-                    android:id="@+id/divider3"
+                    android:id="@+id/divider6"
                     android:layout_width="match_parent"
                     android:layout_height="16dp"
                     android:background="@android:color/white" />
@@ -143,7 +138,7 @@
                     android:id="@+id/btnDelete"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/deletar" />
+                    android:text="Deletar" />
             </LinearLayout>
         </ScrollView>
 

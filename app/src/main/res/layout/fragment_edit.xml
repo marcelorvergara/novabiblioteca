@@ -8,13 +8,13 @@
 
 
     <androidx.cardview.widget.CardView
-        android:layout_width="400dp"
-        android:layout_height="495dp"
+        android:layout_width="0dp"
+        android:layout_height="597dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="28dip"
-            android:layout_marginRight="22dip">
+            android:layout_marginRight="16dip">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -35,27 +35,33 @@
                     android:id="@+id/edtTitulo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Titulo do Livro"
+                    android:hint="@string/titulo_do_livro"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="@android:color/background_dark"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:inputType="textMultiLine"
+                    android:autofillHints="" />
 
                 <EditText
                     android:id="@+id/edtDesc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Descrição ou subtítulo"
+                    android:hint="@string/descri_o_ou_subt_tulo"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="@android:color/background_dark"
-                    android:textSize="22sp" />
+                    android:textSize="22sp"
+                    android:inputType="textMultiLine"
+                    android:autofillHints="" />
 
                 <EditText
                     android:id="@+id/edtAutor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Autor do livro"
-                    android:textSize="18sp" />
+                    android:hint="@string/autor_do_livro"
+                    android:inputType="textAutoCorrect"
+                    android:textSize="18sp"
+                    android:autofillHints="" />
 
                 <TextView
                     android:id="@+id/textViewBlank11"
@@ -66,7 +72,9 @@
                     android:id="@+id/edtResumo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Resumo" />
+                    android:hint="@string/resumo2"
+                    android:inputType="textMultiLine"
+                    android:autofillHints="" />
 
                 <TextView
                     android:id="@+id/textViewBlank12"
@@ -82,19 +90,17 @@
                         android:id="@+id/txtPagina"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Páginas: " />
+                        android:text="@string/p_ginas" />
 
                     <EditText
                         android:id="@+id/edtPag"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
-
-                    <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:autofillHints=""
+                        android:hint="@string/n_mero_de_p_ginas"
+                        android:inputType="number"
+                        android:textSize="14sp" />
 
                     <TextView
                         android:id="@+id/textView5"
@@ -102,31 +108,13 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1" />
 
-                    <TextView
-                        android:id="@+id/txtLer"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:shadowColor="@android:color/holo_blue_light"
-                        android:text="Ler"
-                        android:textColor="@android:color/holo_blue_light" />
-
-                    <TextView
-                        android:id="@+id/txtReservar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:shadowColor="@android:color/holo_blue_light"
-                        android:text="Reservar"
-                        android:textColor="@android:color/holo_blue_light" />
-
                 </LinearLayout>
 
                 <Button
                     android:id="@+id/btnSalvar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Salvar" />
+                    android:text="@string/salvar" />
 
                 <View
                     android:id="@+id/divider6"
@@ -138,7 +126,13 @@
                     android:id="@+id/btnDelete"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Deletar" />
+                    android:text="@string/deletar" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_weight="1" />
             </LinearLayout>
         </ScrollView>
 

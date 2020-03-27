@@ -22,7 +22,8 @@
             android:hint="@string/insira_seu_nome"
             android:inputType="textPersonName"
             app:layout_constraintBaseline_toBaselineOf="@+id/edtId"
-            app:layout_constraintStart_toEndOf="@+id/edtId" />
+            app:layout_constraintStart_toEndOf="@+id/edtId"
+            android:drawableLeft="@drawable/ic_account_box_black_24dp"/>
 
         <Button
             android:id="@+id/btnCadastrar"
@@ -49,7 +50,8 @@
             android:hint="@string/confirmar_sua_senha"
             android:inputType="textPassword"
             app:layout_constraintBaseline_toBaselineOf="@+id/edtSenha"
-            app:layout_constraintStart_toEndOf="@+id/edtSenha" />
+            app:layout_constraintStart_toEndOf="@+id/edtSenha"
+            android:drawableLeft="@drawable/ic_security_black_24dp"/>
 
         <EditText
             android:id="@+id/edtSenha"
@@ -63,7 +65,9 @@
             android:hint="@string/cadastre_sua_senha"
             android:inputType="textPassword"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtNome" />
+            app:layout_constraintTop_toBottomOf="@+id/edtNome"
+            android:drawableLeft="@drawable/ic_security_black_24dp"
+            />
 
         <TextView
             android:id="@+id/textView"

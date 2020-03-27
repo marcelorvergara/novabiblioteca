@@ -15,7 +15,8 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:clipToPadding="false">
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -24,7 +25,9 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="?attr/dialogPreferredPadding"
             android:layout_marginRight="?attr/dialogPreferredPadding"
-            android:background="@color/colorPrimary" />
+            android:background="@color/colorPrimary"
+            android:elevation="2dp"
+            android:outlineProvider="bounds"/>
 
 
     </LinearLayout>

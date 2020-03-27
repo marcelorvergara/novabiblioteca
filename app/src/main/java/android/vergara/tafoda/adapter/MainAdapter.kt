@@ -1,13 +1,10 @@
-package android.vergara.tafoda
+package android.vergara.tafoda.adapter
 
 import android.vergara.tafoda.Model.Note
-import android.vergara.tafoda.ViewModel.LivroViewModel
-import android.vergara.tafoda.frags.HomeFrag
+import android.vergara.tafoda.R
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.livro_row.view.*
 
@@ -22,7 +19,9 @@ class MainAdapter(private val notes: List<Note>, val listener: (Note) -> Unit) :
         //create view
         val layoutInflater = LayoutInflater.from(parent.context).inflate(R.layout.livro_row,parent, false)
         //val cellForRow = layoutInflater.inflate(R.layout.video_row, parent, false)
-        return CustomViewHolder(layoutInflater)
+        return CustomViewHolder(
+            layoutInflater
+        )
     }
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {

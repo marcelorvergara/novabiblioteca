@@ -37,7 +37,7 @@
                 android:layout_height="900dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="4dp"
                 android:layout_marginBottom="186dp"
                 android:background="@android:color/white"
                 android:orientation="vertical">
@@ -76,7 +76,8 @@
                     android:id="@+id/txtResumo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/resumo" />
+                    android:text="@string/resumo"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/textView12"
@@ -96,13 +97,6 @@
                         android:shadowColor="@android:color/holo_blue_light"
                         android:text="@string/paginas"
                         android:textColor="@android:color/holo_blue_light" />
-
-                    <View
-                        android:id="@+id/divider5"
-                        android:layout_width="4dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@android:color/white" />
 
                     <TextView
                         android:id="@+id/txtPag"
@@ -151,7 +145,7 @@
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="match_parent"
-                    android:layout_height="54dp" />
+                    android:layout_height="150dp" />
 
             </LinearLayout>
         </ScrollView>

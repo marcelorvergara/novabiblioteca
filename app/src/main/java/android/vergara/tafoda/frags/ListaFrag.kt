@@ -3,6 +3,7 @@ package android.vergara.tafoda.frags
 
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.vergara.tafoda.Model.Note
@@ -58,10 +59,8 @@ class ListaFrag : Fragment() {
             findNavController().navigate(R.id.editFrag)
         }
 
-
         //intent implícito Share livro
         btnShare.setOnClickListener {
-
             try {
                 val destinos =
                     arrayOf("marcelo.vergara@al.infnet.edu.br")
@@ -72,12 +71,16 @@ class ListaFrag : Fragment() {
                 val sharePag = txtPag.text
 
                 val shareIntent = Intent()
-                shareIntent.type = "message/rfc822"
+                shareIntent.type = "*/*"
+                //intent implícita
                 shareIntent.action = Intent.ACTION_SEND
-                shareIntent.putExtra(Intent.EXTRA_EMAIL, destinos)
+                //shareIntent.setData(Uri.parse("mailto:" + destinos))
+                 shareIntent.putExtra(Intent.EXTRA_EMAIL, destinos)
                 shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Veja esse Livro: $shareTitulo do $shareAutor")
                 shareIntent.putExtra(Intent.EXTRA_TEXT, "Descrição: $shareDesc \n\n $shareResumo\n\n Páginas:$sharePag")
-                startActivity(Intent.createChooser(shareIntent, "Compartilhar via"))
+                //if (shareIntent.resolveActivity(packageManager) != null) {
+                    startActivity(Intent.createChooser(shareIntent, "Compartilhar via Email"))
+                //}
             } catch (e: Exception) {
                 Toast.makeText(this.context!!.applicationContext, "Cliente de e-mail não disponível", Toast.LENGTH_SHORT).show()
             }

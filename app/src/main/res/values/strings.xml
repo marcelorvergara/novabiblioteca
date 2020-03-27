@@ -13,23 +13,26 @@
     <string name="titulo">titulo</string>
     <string name="autor">autor</string>
     <string name="resumo">resumo</string>
-    <string name="paginas">paginas</string>
+    <string name="paginas">"Páginas   "</string>
     <string name="eniar_por_email">Eniar por Email</string>
-    <string name="p_ginas">Páginas:</string>
-    <string name="salvar">Salvar</string>
-    <string name="deletar">Deletar</string>
-    <string name="descri_o_ou_subt_tulo">Descrição ou subtítulo</string>
-    <string name="autor_do_livro">Autor do livro</string>
-    <string name="resumo2">Resumo</string>
-    <string name="insira_seu_nome">Insira seu nome</string>
+    <string name="insira_seu_nome">Escolha um Login</string>
     <string name="cadastrar">Cadastrar</string>
     <string name="confirmar_sua_senha">Confirmar sua senha</string>
     <string name="cadastre_sua_senha">Cadastre sua senha</string>
     <string name="cadastro_de_usu_rio">Cadastro de Usuário</string>
     <string name="escolha_um_apelido">Escolha um apelido</string>
-    <string name="titulo_do_livro">Titulo do Livro</string>
     <string name="total_de_livros_cadastrados">Total de Livros Cadastrados:</string>
     <string name="_0">0</string>
+    <string name="titulo_do_livro">Titulo do Livro</string>
+    <string name="descri_o_ou_subt_tulo">Descrição ou subtítulo</string>
+    <string name="autor_do_livro">Autor do livro</string>
+    <string name="p_ginas">Páginas:</string>
+    <string name="salvar">Salvar</string>
+    <string name="deletar">Deletar</string>
+    <string name="resumo2">Resumo</string>
+    <string name="n_mero_de_p_ginas">número de páginas</string>
+    <string name="total_de_livros_cadastrados2">Total de Livros Cadastrados:</string>
+    <string name="_02">0</string>
 
 
 </resources>

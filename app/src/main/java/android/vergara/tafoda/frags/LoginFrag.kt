@@ -22,10 +22,9 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_cadastro.*
 import kotlinx.android.synthetic.main.fragment_login.*
+import kotlin.random.Random
 
-/**
- * A simple [Fragment] subclass.
- */
+
 class LoginFrag : Fragment() {
 
     lateinit var usersDBHelper : UsersDBHelper
@@ -55,7 +54,8 @@ class LoginFrag : Fragment() {
         }
 
         //usuário teste
-        usersDBHelper.insertUser(User(userid = "Vergara", nome = "1", pass = "1"))
+        val rnds = (0..10000).random()
+        usersDBHelper.insertUser(User(userid = "Vergara$rnds", nome = "1", pass = "1"))
 
         val userModel = userViewModel!!.user?.nome
         val passModel = userViewModel!!.user?.pass
@@ -83,14 +83,14 @@ class LoginFrag : Fragment() {
                     Toast.LENGTH_SHORT
                 ).show()
             } else {
-                val note : List<Note> = livroViewModel!!.notes()
+                val note : List<Note> = livroViewModel.notes()
                 for (note in note) {
                     livrosDBHelper.insertLivro(Note(title = note.title,description = note.description,autor = note.autor,resumo = note.resumo,paginas = note.paginas,ind = note.ind))
                 }
                 val totLivros = livrosDBHelper.countLivros()
                 livroViewModel.total = totLivros
-                Log.i("teste5","DataB ${livrosDBHelper.countLivros().toString()}")
-                Log.i("teste5","ViewM ${livroViewModel!!.total.toString()}")
+                Log.i("teste3","DataB ${livrosDBHelper.countLivros().toString()}")
+                Log.i("teste5","ViewM ${livroViewModel.total.toString()}")
                 val intt = Intent(this.context!!.applicationContext, HomeActivity::class.java)
                 startActivity(intt)
             }

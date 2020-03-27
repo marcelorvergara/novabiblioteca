@@ -23,7 +23,8 @@
             android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edtId"
-            android:autofillHints="" />
+            android:autofillHints=""
+            android:drawableLeft="@drawable/ic_account_box_black_24dp"/>
 
         <Button
             android:id="@+id/btnCadastrar"
@@ -51,7 +52,8 @@
             android:hint="@string/confirmar_sua_senha"
             android:inputType="textPassword"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtSenha" />
+            app:layout_constraintTop_toBottomOf="@+id/edtSenha"
+            android:drawableLeft="@drawable/ic_security_black_24dp"/>
 
         <EditText
             android:id="@+id/edtSenha"
@@ -65,7 +67,8 @@
             android:hint="@string/cadastre_sua_senha"
             android:inputType="textPassword"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtNome" />
+            app:layout_constraintTop_toBottomOf="@+id/edtNome"
+            android:drawableLeft="@drawable/ic_security_black_24dp"/>
 
         <TextView
             android:id="@+id/textView"
@@ -77,7 +80,8 @@
             android:text="@string/cadastro_de_usu_rio"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
         <EditText
             android:id="@+id/edtId"

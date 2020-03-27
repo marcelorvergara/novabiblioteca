@@ -8,6 +8,8 @@ import androidx.lifecycle.ViewModel
 class LivroViewModel: ViewModel() {
     lateinit var livro: List<Note>
     lateinit var um_livro : Note
+
+    //live data
     var total_livros = MutableLiveData<Int>()
     var total: Int = 0
         set(value) {

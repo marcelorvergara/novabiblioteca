@@ -2,7 +2,10 @@ package android.vergara.tafoda.frags
 
 
 import android.graphics.Color
+import android.graphics.text.LineBreaker.JUSTIFICATION_MODE_INTER_WORD
+import android.os.Build
 import android.os.Bundle
+import android.text.Layout
 import android.vergara.tafoda.Model.Note
 import android.vergara.tafoda.R
 import android.vergara.tafoda.ViewModel.LivroViewModel
@@ -12,6 +15,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_edit.*
@@ -33,6 +37,7 @@ class EditFrag : Fragment(){
         return inflater.inflate(R.layout.fragment_edit, container, false)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -80,6 +85,9 @@ class EditFrag : Fragment(){
             Toast.makeText(this.context!!.applicationContext,"Livro $titulo excluído com sucesso!",Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.homeFrag)
         }
+
+        edtDesc.justificationMode = Layout.JUSTIFICATION_MODE_INTER_WORD
+        edtResumo.justificationMode = Layout.JUSTIFICATION_MODE_INTER_WORD
     }
 
 

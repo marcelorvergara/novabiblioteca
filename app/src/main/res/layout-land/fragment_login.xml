@@ -39,7 +39,8 @@
             android:hint="@string/login"
             android:inputType="textPersonName"
             app:layout_constraintBaseline_toBaselineOf="@+id/txtPass"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:drawableLeft="@drawable/ic_account_box_black_24dp" />
 
         <EditText
             android:id="@+id/txtPass"
@@ -53,7 +54,8 @@
             android:hint="@string/password"
             android:inputType="textPassword"
             app:layout_constraintStart_toEndOf="@+id/txtNome"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            android:drawableLeft="@drawable/ic_security_black_24dp"/>
 
         <Button
             android:id="@+id/btnNext"

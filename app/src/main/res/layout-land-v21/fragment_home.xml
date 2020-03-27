@@ -5,17 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
+    android:orientation="horizontal"
     tools:context=".frags.HomeFrag">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="24dp"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:clipToPadding="false">
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -25,8 +25,7 @@
             android:layout_marginLeft="?attr/dialogPreferredPadding"
             android:layout_marginRight="?attr/dialogPreferredPadding"
             android:background="@color/colorPrimary"
-            android:elevation="2dp"
-            android:outlineProvider="bounds"/>
+            android:elevation="2dp"/>
 
 
     </LinearLayout>
@@ -39,7 +38,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginTop="3dp"
         android:fontFamily="@font/roboto"
-        android:text="@string/total_de_livros_cadastrados2"
+        android:text="@string/total_de_livros_cadastrados"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -51,7 +50,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="3dp"
-        android:text="@string/_02"
+        android:text="@string/_0"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/txt1"
         app:layout_constraintTop_toTopOf="parent" />

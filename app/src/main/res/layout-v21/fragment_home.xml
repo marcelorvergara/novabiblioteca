@@ -39,7 +39,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginTop="3dp"
         android:fontFamily="@font/roboto"
-        android:text="@string/total_de_livros_cadastrados2"
+        android:text="Total de Livros Cadastrados:"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -51,7 +51,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="3dp"
-        android:text="@string/_02"
+        android:text="0"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/txt1"
         app:layout_constraintTop_toTopOf="parent" />

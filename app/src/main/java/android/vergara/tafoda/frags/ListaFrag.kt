@@ -74,8 +74,8 @@ class ListaFrag : Fragment() {
                 shareIntent.type = "*/*"
                 //intent implícita
                 shareIntent.action = Intent.ACTION_SEND
-                //shareIntent.setData(Uri.parse("mailto:" + destinos))
-                 shareIntent.putExtra(Intent.EXTRA_EMAIL, destinos)
+                shareIntent.setData(Uri.parse("mailto:" + destinos))
+                shareIntent.putExtra(Intent.EXTRA_EMAIL, destinos)
                 shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Veja esse Livro: $shareTitulo do $shareAutor")
                 shareIntent.putExtra(Intent.EXTRA_TEXT, "Descrição: $shareDesc \n\n $shareResumo\n\n Páginas:$sharePag")
                 //if (shareIntent.resolveActivity(packageManager) != null) {

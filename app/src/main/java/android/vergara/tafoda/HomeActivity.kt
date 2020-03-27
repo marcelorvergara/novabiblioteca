@@ -2,7 +2,6 @@ package android.vergara.tafoda
 
 
 import android.os.Bundle
-import android.util.Log
 import android.vergara.tafoda.Model.Note
 import android.vergara.tafoda.ViewModel.LivroViewModel
 import android.vergara.tafoda.db.LivrosDBHelper
@@ -21,18 +20,18 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-        //inicializando o banco de dados
-        livrosDBHelper = LivrosDBHelper(this)
 
         //rotação
         if (savedInstanceState == null) {
+            //inicializando o banco de dados
+            //livrosDBHelper = LivrosDBHelper(this)
             // Inicializando ViewModel
             livroViewModel = ViewModelProviders.of(this)[LivroViewModel::class.java]
             //adicionando o total de livros no live data
-            livroViewModel.total = livrosDBHelper.countLivros()
-            Log.i("Teste7",livroViewModel.total.toString())
+            //livroViewModel.total = livrosDBHelper.countLivros()
 
-            //livroViewModel.livro = notes()
+
+            //Garantindo pelo menos um livro para não dar erro se o usuário não selecionar um livro no RV
             livroViewModel.um_livro = Note("", "", "", "", "", "")
         }
 

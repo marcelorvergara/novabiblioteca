@@ -18,15 +18,17 @@
             android:id="@+id/note_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
             android:textAllCaps="true"
-            android:textSize="20dp"
+            android:textSize="20sp"
             tools:text="Titulo" />
 
         <TextView
             android:id="@+id/note_desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="14dp"
+            android:fontFamily="@font/roboto_mono_light"
+            android:textSize="14sp"
             tools:text="Descrição" />
 
     </LinearLayout>

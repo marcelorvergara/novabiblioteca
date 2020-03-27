@@ -11,7 +11,7 @@ class LivroViewModel: ViewModel() {
 
     //live data
     var total_livros = MutableLiveData<Int>()
-    var total: Int = -1
+    var total: Int? = -1
          set(value) {
             total_livros.value = total
             field = value

@@ -57,8 +57,14 @@ class HomeFrag : Fragment() {
 
         Log.i("teste4", livroViewModel.total.toString())
         livroViewModel.total_livros.observe(viewLifecycleOwner, Observer {
-            txt2.setText(it.toString())
-            Toast.makeText(this.context!!.applicationContext,it.toString(),Toast.LENGTH_SHORT).show()
+            //marretando observer somente na primeira execução
+            if(it == -1){
+                txt2.setText(livrosDBHelper.countLivros().toString())
+            }else {
+                txt2.setText(it.toString())
+                Toast.makeText(this.context!!.applicationContext, it.toString(), Toast.LENGTH_SHORT)
+                    .show()
+            }
         })
         Log.i("teste6", livroViewModel.total.toString())
     }

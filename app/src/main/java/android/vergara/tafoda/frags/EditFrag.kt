@@ -54,15 +54,10 @@ class EditFrag : Fragment(){
         if(edtTitulo.getText().toString() == "")
         {
             // se vazio
-            Toast.makeText(this.context!!.applicationContext,"É necessário selecionar um livro em Detalhes",
+            Toast.makeText(this.context!!.applicationContext,"É necessário selecionar um livro para Editar ou Deletar",
                 Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.homeFrag)
-            edtTitulo.setText("Nenhum livro selecionado")
-        }else {
-            // não está vazio
-            //Toast.makeText(this.context!!.applicationContext,"Ok, livro selecionado com sucesso ${umLivroViewModel.um_livro.ind}",
-            //    Toast.LENGTH_SHORT).show()
-        }
+         }
         btnSalvar.setOnClickListener{
             val titulo = edtTitulo.text.toString()
             val descricao = edtDesc.text.toString()
@@ -83,6 +78,8 @@ class EditFrag : Fragment(){
             val titulo = edtTitulo.text.toString()
             livrosDBHelper.deleteLivro(umLivroViewModel.um_livro.ind)
             Toast.makeText(this.context!!.applicationContext,"Livro $titulo excluído com sucesso!",Toast.LENGTH_SHORT).show()
+            //update viewmodel para Livedata
+            umLivroViewModel.total = livrosDBHelper.countLivros()
             findNavController().navigate(R.id.homeFrag)
         }
 

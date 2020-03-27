@@ -58,8 +58,8 @@ class NewFrag : Fragment(){
 
             //update tabela SQLite
             livrosDBHelper.insertLivro(edtBook)
-            //update viewmodel
-            //umLivroViewModel.notes(theNoteBook)
+            //update viewmodel para Livedata
+            umLivroViewModel.total = ind
             findNavController().navigate(R.id.homeFrag)
         }
     }

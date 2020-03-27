@@ -30,7 +30,6 @@ class HomeActivity : AppCompatActivity() {
             //adicionando o total de livros no live data
             //livroViewModel.total = livrosDBHelper.countLivros()
 
-
             //Garantindo pelo menos um livro para não dar erro se o usuário não selecionar um livro no RV
             livroViewModel.um_livro = Note("", "", "", "", "", "")
         }

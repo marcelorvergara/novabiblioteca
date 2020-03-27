@@ -17,10 +17,12 @@ import android.vergara.tafoda.ViewModel.UserViewModel
 import android.vergara.tafoda.db.LivrosDBHelper
 import android.vergara.tafoda.db.UsersDBHelper
 import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_cadastro.*
+import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_login.*
 import kotlin.random.Random
 
@@ -30,28 +32,30 @@ class LoginFrag : Fragment() {
     lateinit var usersDBHelper : UsersDBHelper
     lateinit var livrosDBHelper : LivrosDBHelper
     lateinit var livroViewModel: LivroViewModel
+    lateinit var userViewModel: UserViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
+        //inicializando o DB de Users e Livros
         usersDBHelper = UsersDBHelper(this.context!!.applicationContext)
         livrosDBHelper = LivrosDBHelper(this.context!!.applicationContext)
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
-    }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        var userViewModel: UserViewModel? = null
+        //iniciando os ViewsModels User e Livros
         activity?.let{
             userViewModel = ViewModelProviders.of(it)[UserViewModel::class.java]
         }
         activity?.let{
             livroViewModel = ViewModelProviders.of(it)[LivroViewModel::class.java]
         }
+
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_login, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         //usuário teste
         val rnds = (0..10000).random()
@@ -83,14 +87,16 @@ class LoginFrag : Fragment() {
                     Toast.LENGTH_SHORT
                 ).show()
             } else {
+                //carregando a lista de livros pré provisionada na função notes() que está no viremodel
                 val note : List<Note> = livroViewModel.notes()
+                var totLivros: Int = 0 //contador para atualizar o LiveData
                 for (note in note) {
                     livrosDBHelper.insertLivro(Note(title = note.title,description = note.description,autor = note.autor,resumo = note.resumo,paginas = note.paginas,ind = note.ind))
+                    totLivros++
                 }
-                val totLivros = livrosDBHelper.countLivros()
+                //atualizando o LiveData
                 livroViewModel.total = totLivros
-                Log.i("teste3","DataB ${livrosDBHelper.countLivros().toString()}")
-                Log.i("teste5","ViewM ${livroViewModel.total.toString()}")
+                Log.i("testeTotLivros", livroViewModel.total.toString())
                 val intt = Intent(this.context!!.applicationContext, HomeActivity::class.java)
                 startActivity(intt)
             }

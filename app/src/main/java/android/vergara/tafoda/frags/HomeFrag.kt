@@ -62,7 +62,7 @@ class HomeFrag : Fragment() {
                 txt2.setText(livrosDBHelper.countLivros().toString())
             }else {
                 txt2.setText(it.toString())
-                Toast.makeText(this.context!!.applicationContext, it.toString(), Toast.LENGTH_SHORT)
+                Toast.makeText(this.context!!.applicationContext, "Com LiveData: ${it.toString()}", Toast.LENGTH_SHORT)
                     .show()
             }
         })

@@ -26,11 +26,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="28dip"
-            android:layout_marginLeft="28dip"
             android:layout_marginEnd="12dip"
-            android:layout_marginRight="12dip"
-            android:background="@android:color/white"
-            android:scrollbarStyle="insideInset">
+            android:background="@android:color/white">
 
             <LinearLayout
                 android:layout_width="match_parent"

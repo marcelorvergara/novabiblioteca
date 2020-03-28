@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.activity_home.*
 class HomeActivity : AppCompatActivity() {
 
     lateinit var livroViewModel : LivroViewModel
-    lateinit var livrosDBHelper : LivrosDBHelper
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +36,5 @@ class HomeActivity : AppCompatActivity() {
 
         botnNav.setupWithNavController(findNavController(R.id.navFrag))
     }
-
 
 }

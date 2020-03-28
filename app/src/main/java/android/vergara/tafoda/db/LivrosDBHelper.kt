@@ -167,6 +167,16 @@ class LivrosDBHelper(context: Context) : SQLiteOpenHelper(context,DATABASE_NAME,
 
         return true
     }
+
+    @Throws(SQLiteConstraintException::class)
+    fun deleteAll(): Boolean {
+        // Gets the data repository in write mode
+        val db = writableDatabase
+        // Issue SQL statement.
+        val TABLE =DBContractLivros.LivroEntry.TABLE_LIVROS
+        db.execSQL("delete from " + TABLE)
+        return true
+    }
     fun countLivros() : Int{
         val livros = ArrayList<Int>()
         var tot : Int = 0

@@ -32,6 +32,9 @@ class MainAdapter(private val notes: List<Note>, val listener: (Note) -> Unit) :
         holder.hdr_title.setOnClickListener{
             listener(notes[position])
         }
+        holder.hdr_desc.setOnClickListener{
+            listener(notes[position])
+        }
 
     }
 

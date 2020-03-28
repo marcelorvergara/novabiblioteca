@@ -4,33 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="@color/cardview_light_background"
     android:orientation="horizontal"
     tools:context=".frags.HomeFrag">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="24dp"
-        android:orientation="horizontal"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/livro_recyclerview"
+        android:layout_width="849dp"
+        android:layout_height="365dp"
+        android:layout_marginBottom="1dp"
+        android:background="@color/colorPrimary"
+        android:elevation="8dp"
+        android:outlineProvider="bounds"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:clipToPadding="false">
-
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/livro_recyclerview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="?attr/dialogPreferredPadding"
-            android:layout_marginRight="?attr/dialogPreferredPadding"
-            android:background="@color/colorPrimary"
-            android:elevation="2dp"
-            android:outlineProvider="bounds"/>
-
-
-    </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/txt1"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/txt1"
@@ -40,7 +30,8 @@
         android:layout_marginLeft="32dp"
         android:layout_marginTop="3dp"
         android:fontFamily="@font/roboto"
-        android:text="@string/total_de_livros_cadastrados"
+        android:text="@string/total_de_livros_cadastrados2"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -52,7 +43,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="3dp"
-        android:text="@string/_0"
+        android:fontFamily="@font/roboto"
+        android:text="@string/_02"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/txt1"
         app:layout_constraintTop_toTopOf="parent" />

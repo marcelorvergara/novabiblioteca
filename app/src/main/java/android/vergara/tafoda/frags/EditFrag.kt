@@ -16,6 +16,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_edit.*
@@ -75,6 +76,7 @@ class EditFrag : Fragment(){
         }
 
         btnDelete.setOnClickListener {
+
             val titulo = edtTitulo.text.toString()
             livrosDBHelper.deleteLivro(umLivroViewModel.um_livro.ind)
             Toast.makeText(this.context!!.applicationContext,"Livro $titulo excluído com sucesso!",Toast.LENGTH_SHORT).show()

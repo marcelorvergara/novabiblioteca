@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
         <item name="buttonStyle">@style/AppTheme.RoundedCornerMaterialButton</item>
 
     </style>
@@ -34,9 +35,11 @@
 
     <style name="Widget.BottomNavigationView"
         parent="Widget.Design.BottomNavigationView">
-        <item name="fontFamily">sans-serif</item>
+        <item name="fontFamily">@font/roboto</item>
         <item name="android:textSize">22sp</item>
         <item name="android:color">@color/colorAccent</item>
+        <item name="android:textColor">@color/colorAccent</item>
+
 
     </style>
 </resources>

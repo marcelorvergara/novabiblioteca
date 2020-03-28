@@ -16,9 +16,11 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.livro_row.view.*
 
 
 class HomeFrag : Fragment() {
@@ -67,10 +69,14 @@ class HomeFrag : Fragment() {
             }
         })
         Log.i("teste6", livroViewModel.total.toString())
+
     }
+
 
     fun act (note : Note) : Unit {
         livroViewModel.um_livro = note
         findNavController().navigate(R.id.action_homeFrag_to_listaFrag)
     }
+
+
 }

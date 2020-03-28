@@ -5,11 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.vergara.tafoda.Model.User
 import android.vergara.tafoda.ViewModel.UserViewModel
+import android.vergara.tafoda.db.LivrosDBHelper
 import androidx.lifecycle.ViewModelProviders
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_login.*
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var livrosDBHelper : LivrosDBHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,5 +23,10 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    override fun onResume() {
+        super.onResume()
+        livrosDBHelper = LivrosDBHelper(this)
+        livrosDBHelper.deleteAll()
 
+    }
 }

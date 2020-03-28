@@ -18,12 +18,13 @@
             android:layout_marginStart="28dp"
             android:layout_marginLeft="28dp"
             android:autofillHints=""
+            android:drawableStart="@drawable/ic_account_box_black_24dp"
+            android:drawableLeft="@drawable/ic_account_box_black_24dp"
             android:ems="10"
-            android:hint="@string/insira_seu_nome"
+            android:hint="@string/insira"
             android:inputType="textPersonName"
             app:layout_constraintBaseline_toBaselineOf="@+id/edtId"
-            app:layout_constraintStart_toEndOf="@+id/edtId"
-            android:drawableLeft="@drawable/ic_account_box_black_24dp"/>
+            app:layout_constraintStart_toEndOf="@+id/edtId" />
 
         <Button
             android:id="@+id/btnCadastrar"
@@ -51,7 +52,8 @@
             android:inputType="textPassword"
             app:layout_constraintBaseline_toBaselineOf="@+id/edtSenha"
             app:layout_constraintStart_toEndOf="@+id/edtSenha"
-            android:drawableLeft="@drawable/ic_security_black_24dp"/>
+            android:drawableLeft="@drawable/ic_security_black_24dp"
+            android:drawableStart="@drawable/ic_security_black_24dp" />
 
         <EditText
             android:id="@+id/edtSenha"
@@ -67,7 +69,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edtNome"
             android:drawableLeft="@drawable/ic_security_black_24dp"
-            />
+            android:drawableStart="@drawable/ic_security_black_24dp" />
 
         <TextView
             android:id="@+id/textView"
@@ -102,6 +104,7 @@
             android:layout_marginStart="28dp"
             android:layout_marginLeft="28dp"
             android:layout_marginTop="112dp"
+            android:contentDescription="@string/cone_utilizado_para_mostrar_o_password_ao_inv_s_dos_aster_scos2"
             android:src="@drawable/ic_visibility_black_24dp"
             app:layout_constraintStart_toEndOf="@+id/edtSenha2"
             app:layout_constraintTop_toTopOf="parent" />

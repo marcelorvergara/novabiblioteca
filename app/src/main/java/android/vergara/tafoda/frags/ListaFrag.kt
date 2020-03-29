@@ -86,4 +86,5 @@ class ListaFrag : Fragment() {
             }
         }
     }
+
 }

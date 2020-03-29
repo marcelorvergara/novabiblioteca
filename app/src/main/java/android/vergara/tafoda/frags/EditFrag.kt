@@ -1,6 +1,7 @@
 package android.vergara.tafoda.frags
 
 
+import android.content.DialogInterface
 import android.graphics.Color
 import android.graphics.text.LineBreaker.JUSTIFICATION_MODE_INTER_WORD
 import android.os.Build
@@ -76,17 +77,40 @@ class EditFrag : Fragment(){
         }
 
         btnDelete.setOnClickListener {
-
+            val contFrag = activity!!.applicationContext
             val titulo = edtTitulo.text.toString()
-            livrosDBHelper.deleteLivro(umLivroViewModel.um_livro.ind)
-            Toast.makeText(this.context!!.applicationContext,"Livro $titulo excluído com sucesso!",Toast.LENGTH_SHORT).show()
-            //update viewmodel para Livedata
-            umLivroViewModel.total = livrosDBHelper.countLivros()
-            findNavController().navigate(R.id.homeFrag)
+            val dialogBuilder = AlertDialog.Builder(activity!!)
+            dialogBuilder.setMessage("Deletar $titulo ?")
+                .setCancelable(false)
+                //seguir em frente
+                .setPositiveButton("Sim"){ _, which ->
+                    // segue o baile
+                    livrosDBHelper.deleteLivro(umLivroViewModel.um_livro.ind)
+                    //update viewmodel para Livedata
+                    umLivroViewModel.total = livrosDBHelper.countLivros()
+                    findNavController().navigate(R.id.homeFrag)
+                    Toast.makeText(contFrag,"Livro $titulo excluído com sucesso!",Toast.LENGTH_SHORT).show()
+                }
+                .setNegativeButton("Não"){ _, which ->
+                Toast.makeText(contFrag,"Livro não deletado",Toast.LENGTH_SHORT).show()
+            }
+            // Display a neutral button on alert dialog
+            .setNeutralButton("Cancel"){_,_ ->
+                Toast.makeText(contFrag,"Operação cancelada",Toast.LENGTH_SHORT).show()
+            }
+
+            val alert = dialogBuilder.create()
+            alert.setTitle("Deletar Livro")
+            alert.show()
         }
 
         edtDesc.justificationMode = Layout.JUSTIFICATION_MODE_INTER_WORD
         edtResumo.justificationMode = Layout.JUSTIFICATION_MODE_INTER_WORD
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        livrosDBHelper.close()
     }
 
 

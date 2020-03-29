@@ -63,4 +63,9 @@ class NewFrag : Fragment(){
             findNavController().navigate(R.id.homeFrag)
         }
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        livrosDBHelper.close()
+    }
 }

@@ -72,7 +72,7 @@ class LivrosDBHelper(context: Context) : SQLiteOpenHelper(context,DATABASE_NAME,
                 livros.add(Note(title,description,autor,resumo,paginas,ind))
                 cursor.moveToNext()
             }
-
+            cursor.close()
         }
         return livros
     }
@@ -106,7 +106,7 @@ class LivrosDBHelper(context: Context) : SQLiteOpenHelper(context,DATABASE_NAME,
                 livros.add(Note(title,description,autor,resumo,paginas,ind))
                 cursor.moveToNext()
             }
-
+            cursor.close()
         }
         return livros
     }
@@ -148,7 +148,7 @@ class LivrosDBHelper(context: Context) : SQLiteOpenHelper(context,DATABASE_NAME,
                 livros.add(ind.toInt())
                 cursor.moveToNext()
             }
-
+            cursor.close()
         }
         maior = livros.max()!!
         return maior
@@ -198,7 +198,7 @@ class LivrosDBHelper(context: Context) : SQLiteOpenHelper(context,DATABASE_NAME,
                 cursor.moveToNext()
                 ++incr
             }
-
+            cursor.close()
         }
 
         return incr

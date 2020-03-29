@@ -37,4 +37,8 @@ class HomeActivity : AppCompatActivity() {
         botnNav.setupWithNavController(findNavController(R.id.navFrag))
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+
+    }
 }

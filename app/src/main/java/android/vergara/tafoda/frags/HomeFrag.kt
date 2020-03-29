@@ -64,8 +64,7 @@ class HomeFrag : Fragment() {
                 txt2.setText(livrosDBHelper.countLivros().toString())
             }else {
                 txt2.setText(it.toString())
-                Toast.makeText(this.context!!.applicationContext, "Com LiveData: ${it.toString()}", Toast.LENGTH_SHORT)
-                    .show()
+                //Toast.makeText(this.context!!.applicationContext, "Com LiveData: ${it.toString()}", Toast.LENGTH_SHORT).show()
             }
         })
         Log.i("teste6", livroViewModel.total.toString())
@@ -78,5 +77,8 @@ class HomeFrag : Fragment() {
         findNavController().navigate(R.id.action_homeFrag_to_listaFrag)
     }
 
-
+    override fun onDestroy() {
+        super.onDestroy()
+        livrosDBHelper.close()
+    }
 }

@@ -25,8 +25,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        //limpar a base para não carregar novamente quando o usuário voltar para a tela de login
         livrosDBHelper = LivrosDBHelper(this)
         livrosDBHelper.deleteAll()
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        livrosDBHelper.close()
     }
 }

@@ -10,14 +10,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
+import kotlinx.android.synthetic.main.fragment_edit.*
 import kotlinx.android.synthetic.main.fragment_new.edtAutor
 import kotlinx.android.synthetic.main.fragment_new.edtDesc
 import kotlinx.android.synthetic.main.fragment_new.edtPag
 import kotlinx.android.synthetic.main.fragment_new.edtResumo
 import kotlinx.android.synthetic.main.fragment_new.edtTitulo
 import kotlinx.android.synthetic.main.fragment_new.*
+import kotlinx.android.synthetic.main.fragment_new.txt2
+import kotlinx.android.synthetic.main.fragment_new.txtPagina
 
 /**
  * A simple [Fragment] subclass.
@@ -42,7 +47,15 @@ class NewFrag : Fragment(){
         activity?.let{
             umLivroViewModel = ViewModelProviders.of(it).get(LivroViewModel::class.java)
         }
-
+        umLivroViewModel.total_livros.observe(viewLifecycleOwner, Observer {
+            //marretando observer somente na primeira execução
+            if(it == -1){
+                txt2.setText(livrosDBHelper.countLivros().toString())
+            }else {
+                txt2.setText(it.toString())
+                Toast.makeText(this.context!!.applicationContext, "Com LiveData: ${it.toString()}", Toast.LENGTH_SHORT).show()
+            }
+        })
         btnNovoLivro.setOnClickListener{
             //valores do novo livro meno o indice
             val titulo = edtTitulo.text.toString()

@@ -10,7 +10,7 @@
     <string name="password">Password</string>
     <string name="cadastro">Cadastro</string>
     <string name="logo_da_infnet">Logo da Infnet</string>
-    <string name="titulo">titulo</string>
+    <string name="titulo">Titulo</string>
     <string name="autor">autor</string>
     <string name="resumo">resumo</string>
     <string name="paginas">"Páginas   "</string>
@@ -38,6 +38,7 @@
     <string name="insiraseunome">Insira o seu nome</string>
     <string name="insira">"Insira o seu nome "</string>
     <string name="show_multi_choice_confirmation_dialog">Show multi-choice confirmation dialog</string>
+    <string name="LiveDataTotal">Edição de Livro - Total de Livros Cadastrados:</string>
 
 
 </resources>

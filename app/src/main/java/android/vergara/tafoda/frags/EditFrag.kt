@@ -18,9 +18,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_edit.*
+import kotlinx.android.synthetic.main.fragment_edit.txt2
+import kotlinx.android.synthetic.main.fragment_home.*
 
 /**
  * A simple [Fragment] subclass.
@@ -42,10 +45,19 @@ class EditFrag : Fragment(){
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         activity?.let{
             umLivroViewModel = ViewModelProviders.of(it).get(LivroViewModel::class.java)
         }
+        umLivroViewModel.total_livros.observe(viewLifecycleOwner, Observer {
+            //marretando observer somente na primeira execução
+            if(it == -1){
+                txt2.setText(livrosDBHelper.countLivros().toString())
+            }else {
+                txt2.setText(it.toString())
+                //Toast.makeText(this.context!!.applicationContext, "Com LiveData: ${it.toString()}", Toast.LENGTH_SHORT).show()
+            }
+        })
+
         edtTitulo.setText(umLivroViewModel.um_livro.title)
         edtDesc.setText(umLivroViewModel.um_livro.description)
         edtAutor.setText(umLivroViewModel.um_livro.autor)
@@ -80,7 +92,7 @@ class EditFrag : Fragment(){
             val contFrag = activity!!.applicationContext
             val titulo = edtTitulo.text.toString()
             val dialogBuilder = AlertDialog.Builder(activity!!)
-            dialogBuilder.setMessage("Deletar $titulo ?")
+            dialogBuilder.setMessage("Tem certeza que gostaria de deletar $titulo ?")
                 .setCancelable(false)
                 //seguir em frente
                 .setPositiveButton("Sim"){ _, which ->

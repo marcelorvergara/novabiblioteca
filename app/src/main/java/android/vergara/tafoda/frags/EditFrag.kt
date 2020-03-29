@@ -95,7 +95,7 @@ class EditFrag : Fragment(){
             dialogBuilder.setMessage("Tem certeza que gostaria de deletar $titulo ?")
                 .setCancelable(false)
                 //seguir em frente
-                .setPositiveButton("Sim"){ _, which ->
+                .setPositiveButton("Sim"){ _, _ ->
                     // segue o baile
                     livrosDBHelper.deleteLivro(umLivroViewModel.um_livro.ind)
                     //update viewmodel para Livedata
@@ -103,7 +103,7 @@ class EditFrag : Fragment(){
                     findNavController().navigate(R.id.homeFrag)
                     Toast.makeText(contFrag,"Livro $titulo excluído com sucesso!",Toast.LENGTH_SHORT).show()
                 }
-                .setNegativeButton("Não"){ _, which ->
+                .setNegativeButton("Não"){ _, _ ->
                 Toast.makeText(contFrag,"Livro não deletado",Toast.LENGTH_SHORT).show()
             }
             // Display a neutral button on alert dialog
@@ -118,11 +118,6 @@ class EditFrag : Fragment(){
 
         edtDesc.justificationMode = Layout.JUSTIFICATION_MODE_INTER_WORD
         edtResumo.justificationMode = Layout.JUSTIFICATION_MODE_INTER_WORD
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        livrosDBHelper.close()
     }
 
 

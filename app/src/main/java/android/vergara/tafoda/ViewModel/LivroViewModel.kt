@@ -19,7 +19,7 @@ class LivroViewModel: ViewModel() {
 
     fun notes(): List<Note> {
 
-        var theBooks : MutableList<Note> = mutableListOf(
+        var bibliotecaInfnet : MutableList<Note> = mutableListOf(
             Note(
                 "Livro de Kotlin com Android",
                 "Este livro ensina a desenvolver aplicativos Android com a linguagem Kotlin.",
@@ -155,9 +155,33 @@ class LivroViewModel: ViewModel() {
                 "Resumo: O leitor que aceitar o desafio proposto pela leitura certamente sairá com um olhar \"fora da caixinha\" porque o que Mark Manson faz é desconstruir lugares comuns. Um exemplo pode ser encontrado no capítulo 3, intitulado \"Você não é especial\". Ao contrário do que a sociedade tenta incutir, somos confrontados com a dura realidade de que somos mais um no meio da multidão, sofrendo de inseguranças e medos similares. A escrita de Manson é anti o sonho americano, anti as histórias perfeitas, de superação, anti a felicidade plena idealizada. Trata-se de um elogio ao ser humano comum, médio, com os seus altos e baixos. A Arte Subtil de Saber Dizer que se F*da é uma tentativa de deixar o sujeito confortável com a sua própria condição e com os seus fracassos.",
                 "502",
                 "17"
-            )
+            ),
+            Note("O Conde de Monte Cristo",
+            "Amor, vingança, traição e tesouro!",
+                "Autor: Alexandre Dumas",
+                "Resumo: Edmond Dantès perde tudo quando é traído por um companheiro invejoso. Agora, com uma nova identidade, ele sairá em busca de vingança, procurando destruir totalmente seus inimigos. Desde que foi publicado, O Conde de Monte Cristo nunca deixou de ser popular e inspirou muitas outras histórias.",
+                "450",
+                "18"),
+            Note("O Processo",
+                "Uma crítica à burocracia",
+                "Autor: Franz Kafka",
+                "Rsumo: O Processo conta a história de Joseph K., preso e julgado por um crime que desconhece. Como ninguém lhe diz qual foi o crime que cometeu, o protagonista não consegue se defender. A história fica cada vez mais bizarra, enquanto Joseph K. procura uma solução para uma situação impossível.",
+                "340",
+                "19"),
+            Note("Grande Sertão: Veredas",
+                "Considerado por muitos como o maior escritor brasileiro, João Guimarães Rosa lançou sua epopéia Grande Sertão: Veredas em 1956.",
+                "Autor: João Guimarães Rosa",
+                "Resumo: O livro é não só um clássico da literatura lusófona, mas também mundial. A história se passa no sertão brasileiro e acompanha a jornada do jagunço Riobaldo, as guerras e conflitos no sertão e também seu relacionamento com o intrigante jagunço Diadorim. O escritor traz a linguagem sertaneja para a voz de seu protagonista, utilizando neologismos que muitas vezes podem ser incompreensíveis, mas que fazem total sentido na saga que é ler este grande clássico literário.",
+                "512",
+                "20"),
+            Note("Morte em Veneza",
+                "Recipiente do Prêmio Nobel de Literatura em 1929, Thomas Mann foi um dos maiores escritores alemães de todos os tempos",
+                "Autor: Thomas Mann",
+                "Resumo: Em seu livro, Morte em Veneza, ele explora os conceitos de beleza e obsessão. O livro conta a história de um homem mais velho que se apaixona platonicamente por um jovem polaco em suas férias na cidade de Veneza. Ele vai estudar e refletir sobre os conceitos de beleza e nunca chegará a ter contato de fato com o garoto. Como o próprio nome da obra revela, o protagonista tem seu trágico fim em uma praia da cidade italiana.",
+                "230",
+                "21")
         )
 
-    return theBooks
+    return bibliotecaInfnet
     }
 }

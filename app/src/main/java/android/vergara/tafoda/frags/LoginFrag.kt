@@ -61,8 +61,8 @@ class LoginFrag : Fragment() {
         val rnds = (0..10000).random()
         usersDBHelper.insertUser(User(userid = "Vergara$rnds", nome = "1", pass = "1"))
 
-        val userModel = userViewModel!!.user?.nome
-        val passModel = userViewModel!!.user?.pass
+        val userModel = userViewModel.user?.nome
+        val passModel = userViewModel.user?.pass
         if ( userModel != null && !userModel.isNullOrBlank()) {
         //Toast.makeText(this.context!!.applicationContext, "$user", Toast.LENGTH_SHORT ).show()
         //if ( user != null) {
@@ -73,7 +73,7 @@ class LoginFrag : Fragment() {
         btnCadastro.setOnClickListener {
             val nome = txtNome.text.toString()
             val pass = txtPass.text.toString()
-            userViewModel!!.user = User("",nome,pass)
+            userViewModel.user = User("",nome,pass)
             findNavController().navigate(R.id.action_loginFrag_to_cadastroFrag)
         }
         btnNext.setOnClickListener {

@@ -53,7 +53,7 @@ class NewFrag : Fragment(){
                 txt2.setText(livrosDBHelper.countLivros().toString())
             }else {
                 txt2.setText(it.toString())
-                Toast.makeText(this.context!!.applicationContext, "Com LiveData: ${it.toString()}", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this.context!!.applicationContext, "Com LiveData: ${it.toString()}", Toast.LENGTH_SHORT).show()
             }
         })
         btnNovoLivro.setOnClickListener{
@@ -77,8 +77,5 @@ class NewFrag : Fragment(){
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        livrosDBHelper.close()
-    }
+
 }

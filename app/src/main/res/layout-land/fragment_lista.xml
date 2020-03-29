@@ -67,28 +67,34 @@
 
             <View
                 android:id="@+id/divider5"
-                android:layout_width="4dp"
+                android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@android:color/white" />
 
             <TextView
                 android:id="@+id/txtPag"
-                android:layout_width="wrap_content"
+                android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/txt1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                 android:fontFamily="@font/roboto"
+                android:text="@string/LiveData_Lista"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/txt2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:fontFamily="@font/roboto"
+                android:text="@string/_02"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 

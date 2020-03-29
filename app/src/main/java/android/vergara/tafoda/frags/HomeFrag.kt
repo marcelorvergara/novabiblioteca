@@ -77,8 +77,5 @@ class HomeFrag : Fragment() {
         findNavController().navigate(R.id.action_homeFrag_to_listaFrag)
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        livrosDBHelper.close()
-    }
+
 }

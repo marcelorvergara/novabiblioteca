@@ -55,7 +55,7 @@ class ListaFrag : Fragment() {
                 txt2.setText(livrosDBHelper.countLivros().toString())
             }else {
                 txt2.setText(it.toString())
-                Toast.makeText(this.context!!.applicationContext, "Com LiveData: ${it.toString()}", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this.context!!.applicationContext, "Com LiveData: ${it.toString()}", Toast.LENGTH_SHORT).show()
             }
         })
 
@@ -80,10 +80,10 @@ class ListaFrag : Fragment() {
 
         //intent implícito Share livro
         btnShare.setOnClickListener {
-            val pm = activity!!.applicationContext.packageManager
+
             val shareIntent = Intent()
             val destinos =
-                arrayOf("marcelo.vergara@al.infnet.edu.br")
+                arrayOf("marcelo@gmail.com","marcelo.vergara@al.infnet.edu.br")
             val shareTitulo = txtTitulo.text
             val shareDesc = txtDesc.text
             val shareAutor = txtAutor.text
@@ -115,8 +115,5 @@ class ListaFrag : Fragment() {
                 }
             }
         }
-    override fun onDestroy() {
-        super.onDestroy()
-        livrosDBHelper.close()
-    }
+
 }

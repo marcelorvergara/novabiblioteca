@@ -45,6 +45,8 @@
     <string name="autor_do_livroNew">Autor do livro</string>
     <string name="resumoNew">Resumo</string>
     <string name="inserir_novo_livroNew">Inserir Novo Livro</string>
+    <string name="LiveData_Lista">Destalhes do Livro - Total de Livros Cadastrados:</string>
+    <string name="LiveData_NovoLivro">Novo Livro - Total de Livros Cadastrados:</string>
 
 
 </resources>

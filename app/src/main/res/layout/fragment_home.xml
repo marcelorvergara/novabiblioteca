@@ -8,6 +8,7 @@
     tools:context=".frags.HomeFrag"
     >
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/livro_recyclerview"
         android:layout_width="390dp"

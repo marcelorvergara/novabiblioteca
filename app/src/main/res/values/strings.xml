@@ -39,6 +39,12 @@
     <string name="insira">"Insira o seu nome "</string>
     <string name="show_multi_choice_confirmation_dialog">Show multi-choice confirmation dialog</string>
     <string name="LiveDataTotal">Edição de Livro - Total de Livros Cadastrados:</string>
+    <string name="n_mero_de_p_ginasNew">Número de páginas</string>
+    <string name="titulo_do_livroNew">Titulo do Livro</string>
+    <string name="descri_o_ou_subt_tuloNew">Descrição ou subtítulo</string>
+    <string name="autor_do_livroNew">Autor do livro</string>
+    <string name="resumoNew">Resumo</string>
+    <string name="inserir_novo_livroNew">Inserir Novo Livro</string>
 
 
 </resources>

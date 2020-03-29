@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
-            android:hint="Descrição ou subtítulo"
+            android:hint="@string/descri_o_ou_subt_tuloNew"
             android:inputType="textAutoCorrect"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@android:color/background_dark"
@@ -42,7 +42,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints=""
-            android:hint="Autor do livro"
+            android:hint="@string/autor_do_livroNew"
+            android:inputType="text"
             android:textSize="18sp" />
 
         <TextView
@@ -54,7 +55,9 @@
             android:id="@+id/edtResumo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Resumo" />
+            android:autofillHints=""
+            android:hint="@string/resumoNew"
+            android:inputType="textAutoCorrect" />
 
         <TextView
             android:id="@+id/textViewBlank12"
@@ -70,9 +73,11 @@
                 android:id="@+id/txtPagina"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Número de páginas"
+                android:hint="@string/n_mero_de_p_ginasNew"
+                android:inputType="number"
                 android:shadowColor="@android:color/holo_blue_light"
-                android:textColor="@android:color/holo_blue_light" />
+                android:textColor="@android:color/holo_blue_light"
+                android:autofillHints="" />
 
             <TextView
                 android:id="@+id/edtPag"
@@ -98,7 +103,7 @@
             android:id="@+id/btnNovoLivro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Inserir Novo Livro" />
+            android:text="@string/inserir_novo_livroNew" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
@@ -107,13 +112,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-            </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 

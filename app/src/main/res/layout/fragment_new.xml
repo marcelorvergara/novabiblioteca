@@ -63,27 +63,33 @@
                     android:id="@+id/edtTitulo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Titulo do Livro"
+                    android:hint="@string/titulo_do_livroNew"
+                    android:inputType="textAutoCorrect"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="@android:color/background_dark"
                     android:textSize="24sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:autofillHints="" />
 
                 <EditText
                     android:id="@+id/edtDesc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Descrição ou subtítulo"
+                    android:hint="@string/descri_o_ou_subt_tuloNew"
+                    android:inputType="textAutoCorrect"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="@android:color/background_dark"
-                    android:textSize="22sp" />
+                    android:textSize="22sp"
+                    android:autofillHints="" />
 
                 <EditText
                     android:id="@+id/edtAutor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Autor do livro"
-                    android:textSize="18sp" />
+                    android:hint="@string/autor_do_livroNew"
+                    android:inputType="text"
+                    android:textSize="18sp"
+                    android:autofillHints="" />
 
                 <TextView
                     android:id="@+id/textViewBlank11"
@@ -94,7 +100,9 @@
                     android:id="@+id/edtResumo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Resumo" />
+                    android:hint="@string/resumoNew"
+                    android:inputType="textAutoCorrect"
+                    android:autofillHints="" />
 
                 <TextView
                     android:id="@+id/textViewBlank12"
@@ -110,10 +118,11 @@
                         android:id="@+id/txtPagina"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="Número de páginas"
+                        android:hint="@string/n_mero_de_p_ginasNew"
                         android:inputType="number"
                         android:shadowColor="@android:color/holo_blue_light"
-                        android:textColor="@android:color/holo_blue_light" />
+                        android:textColor="@android:color/holo_blue_light"
+                        android:autofillHints="" />
 
                     <TextView
                         android:id="@+id/edtPag"
@@ -139,7 +148,7 @@
                     android:id="@+id/btnNovoLivro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Inserir Novo Livro" />
+                    android:text="@string/inserir_novo_livroNew" />
             </LinearLayout>
         </ScrollView>
 

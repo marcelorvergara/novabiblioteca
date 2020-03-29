@@ -22,7 +22,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.livro_row.view.*
 
-
+//teste
 class HomeFrag : Fragment() {
 
     lateinit var livroViewModel: LivroViewModel

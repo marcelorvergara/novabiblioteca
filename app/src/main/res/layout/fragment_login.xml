@@ -27,6 +27,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/logo" />
 
+
         <EditText
             android:id="@+id/txtNome"
             android:layout_width="wrap_content"
@@ -40,7 +41,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView"
             android:autofillHints=""
-            android:drawableLeft="@drawable/ic_account_box_black_24dp" />
+            android:drawableLeft="@drawable/ic_account_box_black_24dp"
+            />
+
 
         <EditText
             android:id="@+id/txtPass"
@@ -58,6 +61,7 @@
             android:drawableLeft="@drawable/ic_security_black_24dp"/>
 
         <Button
+            android:state_pressed="true"
             android:id="@+id/btnNext"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -69,7 +73,10 @@
             android:text="@string/login"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtPass" />
+            app:layout_constraintTop_toBottomOf="@+id/txtPass"
+            android:background="@drawable/button_selector"
+            />
+
 
         <Button
             android:id="@+id/btnCadastro"
@@ -83,7 +90,8 @@
             android:text="@string/cadastro"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnNext" />
+            app:layout_constraintTop_toBottomOf="@+id/btnNext"
+            android:background="@drawable/button_selector"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

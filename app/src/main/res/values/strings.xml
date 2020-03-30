@@ -16,8 +16,8 @@
     <string name="paginas">"Páginas   "</string>
     <string name="eniar_por_email">Eniar por Email</string>
     <string name="cadastrar">Cadastrar</string>
-    <string name="confirmar_sua_senha">Confirmar sua senha</string>
-    <string name="cadastre_sua_senha">Cadastre sua senha</string>
+    <string name="confirmar_sua_senha">Confirmar sua senha*</string>
+    <string name="cadastre_sua_senha">Cadastre sua senha*</string>
     <string name="cadastro_de_usu_rio">Cadastro de Usuário</string>
     <string name="escolha_um_apelido">Escolha um apelido</string>
     <string name="total_de_livros_cadastrados">Total de Livros Cadastrados:</string>
@@ -35,8 +35,8 @@
     <string name="cone_utilizado_para_mostrar_o_password_ao_inv_s_dos_aster_scos">Ícone utilizado para mostrar o password ao invés dos asteríscos</string>
     <string name="cone_utilizado_para_mostrar_o_password_ao_inv_s_dos_aster_scos2">Ícone utilizado para mostrar o password ao invés dos asteríscos</string>
     <string name="_03">0</string>
-    <string name="insiraseunome">Insira o seu nome</string>
-    <string name="insira">"Insira o seu nome "</string>
+    <string name="insiraseunome">Insira o seu nome*</string>
+    <string name="insira">"Insira o seu nome* "</string>
     <string name="show_multi_choice_confirmation_dialog">Show multi-choice confirmation dialog</string>
     <string name="LiveDataTotal">Edição de Livro - Total de Livros Cadastrados:</string>
     <string name="n_mero_de_p_ginasNew">Número de páginas</string>

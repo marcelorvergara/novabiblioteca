@@ -93,7 +93,7 @@ class ListaFrag : Fragment() {
                     shareIntent.type = "*/*"
                     //intent implícita
                     shareIntent.action = Intent.ACTION_SEND
-                    shareIntent.setData(Uri.parse("mailto:" + destinos))
+                    //shareIntent.setData(Uri.parse("mailto:" + destinos))
                     shareIntent.putExtra(Intent.EXTRA_EMAIL, destinos)
                     shareIntent.putExtra(
                         Intent.EXTRA_SUBJECT,

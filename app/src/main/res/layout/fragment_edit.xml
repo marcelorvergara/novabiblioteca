@@ -140,19 +140,22 @@
                     android:id="@+id/btnSalvar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/salvar" />
+                    android:text="@string/salvar"
+                    android:background="@drawable/button_selector"/>
 
                 <View
                     android:id="@+id/divider6"
                     android:layout_width="match_parent"
                     android:layout_height="16dp"
-                    android:background="@android:color/white" />
+                    android:background="@android:color/white"
+                    />
 
                 <Button
                     android:id="@+id/btnDelete"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/deletar" />
+                    android:text="@string/deletar"
+                    android:background="@drawable/button_selector"/>
 
                 <TextView
                     android:id="@+id/textView4"

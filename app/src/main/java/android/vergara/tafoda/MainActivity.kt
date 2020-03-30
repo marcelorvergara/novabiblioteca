@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var userViewModel = ViewModelProviders.of(this)[UserViewModel::class.java]
+        //var userViewModel = ViewModelProviders.of(this)[UserViewModel::class.java]
         //userViewModel.user = User("Marcelo","marcelo@globo.com")
 
     }

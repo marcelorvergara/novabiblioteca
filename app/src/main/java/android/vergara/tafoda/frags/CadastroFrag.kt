@@ -2,22 +2,22 @@ package android.vergara.tafoda.frags
 
 
 import android.os.Bundle
-import android.text.InputType
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.vergara.tafoda.Model.User
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-
 import android.vergara.tafoda.R
 import android.vergara.tafoda.ViewModel.UserViewModel
 import android.vergara.tafoda.db.UsersDBHelper
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.textfield.TextInputLayout
 import kotlinx.android.synthetic.main.fragment_cadastro.*
+
 
 /**
  * A simple [Fragment] subclass.

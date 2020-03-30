@@ -69,7 +69,8 @@
             android:text="@string/login"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtPass" />
+            app:layout_constraintTop_toBottomOf="@+id/txtPass"
+            android:background="@drawable/button_selector"/>
 
         <Button
             android:id="@+id/btnCadastro"
@@ -83,7 +84,8 @@
             android:text="@string/cadastro"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnNext" />
+            app:layout_constraintTop_toBottomOf="@+id/btnNext"
+            android:background="@drawable/button_selector"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

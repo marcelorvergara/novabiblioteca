@@ -25,7 +25,8 @@
             android:hint="@string/insiraseunome"
             android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtId" />
+            app:layout_constraintTop_toBottomOf="@+id/edtId"
+            app:errorEnabled="true"/>
 
         <Button
             android:id="@+id/btnCadastrar"
@@ -39,7 +40,8 @@
             android:text="@string/cadastrar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtSenha2" />
+            app:layout_constraintTop_toBottomOf="@+id/edtSenha2"
+            android:background="@drawable/button_selector"/>
 
         <EditText
             android:id="@+id/edtSenha2"
@@ -104,9 +106,9 @@
             android:id="@+id/imgEye"
             android:layout_width="33dp"
             android:layout_height="43dp"
-            android:layout_marginStart="31dp"
-            android:layout_marginLeft="31dp"
-            android:layout_marginTop="286dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="288dp"
             android:contentDescription="@string/cone_utilizado_para_mostrar_o_password_ao_inv_s_dos_aster_scos"
             android:src="@drawable/ic_visibility_black_24dp"
             app:layout_constraintStart_toEndOf="@+id/edtSenha"

@@ -148,7 +148,8 @@
                     android:id="@+id/btnNovoLivro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/inserir_novo_livroNew" />
+                    android:text="@string/inserir_novo_livroNew"
+                    android:background="@drawable/button_selector"/>
             </LinearLayout>
         </ScrollView>
 
